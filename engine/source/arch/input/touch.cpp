@@ -10,30 +10,10 @@
 //                                                                                 //
 //=================================================================================//
 
-#pragma once
+#include <arch/input/touch.h>
 
-#include <vector>
-#include <arch/math.h>
-#include "input_state.h"
+using namespace arch;
 
-namespace arch
-{
-
-struct touch final
-{
-
-struct info final
-{
-	int			identity;	/// 識別ID
-	int2		position;	/// 位置
-	double2		move;		/// 移動量
-	input_state	state;		/// 状慁E
-};
-
-static bool supports;
-static bool supports_multi;
-static std::vector<info> infos;
-
-};
-
-}
+bool touch::supports = false;
+bool touch::supports_multi = false;
+std::vector<touch::info> touch::infos;

@@ -10,30 +10,30 @@
 //                                                                                 //
 //=================================================================================//
 
-#pragma once
+#include "arch/cross_compile.h"
+#include "win32/config.h"
 
-#include <vector>
-#include <arch/math.h>
-#include "input_state.h"
 
-namespace arch
+//using namespace arch;
+
+void arch_main();
+
+#ifdef ARCHENGINE_PLATFORM_WINDOWS
+
+#include <Windows.h>
+
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
-
-struct touch final
-{
-
-struct info final
-{
-	int			identity;	/// 識別ID
-	int2		position;	/// 位置
-	double2		move;		/// 移動量
-	input_state	state;		/// 状慁E
-};
-
-static bool supports;
-static bool supports_multi;
-static std::vector<info> infos;
-
-};
-
+	arch_main();
+	return 0;
 }
+
+#elif ARCHENGINE_PLATFORM_OSX
+
+int main()
+{
+	arch_main();
+	return 0;
+}
+
+#endif

@@ -12,28 +12,8 @@
 
 #pragma once
 
-#include <vector>
-#include <arch/math.h>
-#include "input_state.h"
-
-namespace arch
-{
-
-struct touch final
-{
-
-struct info final
-{
-	int			identity;	/// 識別ID
-	int2		position;	/// 位置
-	double2		move;		/// 移動量
-	input_state	state;		/// 状慁E
-};
-
-static bool supports;
-static bool supports_multi;
-static std::vector<info> infos;
-
-};
-
-}
+#include "input/input_state.h"
+#include "input/keyboard.h"
+#include "input/mouse.h"
+#include "input/pen.h"
+#include "input/touch.h"

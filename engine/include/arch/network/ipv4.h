@@ -12,28 +12,52 @@
 
 #pragma once
 
-#include <vector>
-#include <arch/math.h>
-#include "input_state.h"
+#include <string>
+#include <sstream>
 
 namespace arch
 {
 
-struct touch final
+namespace ipv4
 {
 
-struct info final
+class address
 {
-	int			identity;	/// 識別ID
-	int2		position;	/// 位置
-	double2		move;		/// 移動量
-	input_state	state;		/// 状慁E
+public:
+	address() = default;
+	
+	constexpr address(unsigned char _a, unsigned char _b, unsigned char _c, unsigned char _d)
+		: a(_a), b(_b), c(_c), d(_d)
+	{
+	}
+
+	~address() = default;
+
+
+	std::string to_string() const
+	{
+		std::stringstream ss;
+		ss << static_cast<int>(a) << '.' << static_cast<int>(b) << '.' << static_cast<int>(c) << '.' << static_cast<int>(d);
+		return ss.str();
+	}
+	
+	static constexpr address broadcast()
+	{
+		return{ 255, 255, 255, 255 };
+	}
+
+	static constexpr address loopback()
+	{
+		return{ 127, 0, 0, 1 };
+	}
+
+public:
+	unsigned char a;
+	unsigned char b;
+	unsigned char c;
+	unsigned char d;
 };
 
-static bool supports;
-static bool supports_multi;
-static std::vector<info> infos;
-
-};
+}
 
 }
