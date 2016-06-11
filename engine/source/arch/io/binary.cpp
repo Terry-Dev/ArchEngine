@@ -11,7 +11,7 @@
 //=================================================================================//
 
 #include <fstream>
-#include "arch/binary_file.h"
+#include <arch/io/binary.h>
 
 using namespace arch;
 

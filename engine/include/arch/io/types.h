@@ -12,11 +12,20 @@
 
 #pragma once
 
-#include "utility/algorithm.h"
-#include "utility/cross_compile.h"
-#include "utility/endian.h"
-#include "utility/identity.h"
-#include "utility/singleton.h"
-#include "utility/stopwatch.h"
-#include "utility/string_algorithm.h"
-#include "utility/unexpected.h"
+namespace arch
+{
+
+enum class seek_origin
+{
+	begin,		///< 始端
+	current,	///< 現在
+	end,		///< 終端
+};
+
+enum class open_mode
+{
+	append,		///< 追加
+	truncate,	///< 破棄
+};
+
+}

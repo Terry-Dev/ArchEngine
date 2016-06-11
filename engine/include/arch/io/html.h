@@ -12,11 +12,23 @@
 
 #pragma once
 
-#include "utility/algorithm.h"
-#include "utility/cross_compile.h"
-#include "utility/endian.h"
-#include "utility/identity.h"
-#include "utility/singleton.h"
-#include "utility/stopwatch.h"
-#include "utility/string_algorithm.h"
-#include "utility/unexpected.h"
+#include "logging.h"
+#include "text_file.h"
+
+namespace arch
+{
+
+class html_logger final : public logger
+{
+public:
+	html_logger();
+	html_logger(const std::string& _path = "log.html");
+	~html_logger();
+
+	void write(const std::string& message, trace_level level) override;
+
+private:
+	text_writer writer;
+};
+
+}

@@ -12,11 +12,12 @@
 
 #pragma once
 
-#include "utility/algorithm.h"
-#include "utility/cross_compile.h"
-#include "utility/endian.h"
-#include "utility/identity.h"
-#include "utility/singleton.h"
-#include "utility/stopwatch.h"
-#include "utility/string_algorithm.h"
-#include "utility/unexpected.h"
+#ifdef _WIN32
+#define ARCHENGINE_PLATFORM_WINDOWS
+#elif _WIN64
+#define ARCHENGINE_PLATFORM_WINDOWS
+#elif __APPLE__
+#define ARCHENGINE_PLATFORM_OSX
+#elif __linux__
+#define ARCHENGINE_PLATFORM_LINUX
+#endif

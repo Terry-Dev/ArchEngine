@@ -14,4 +14,6 @@
 
 #include "math.h"
 #include "utility.h"
+#include "string.h"
+#include "network.h"
 #include "input.h"

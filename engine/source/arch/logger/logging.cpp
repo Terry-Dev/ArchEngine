@@ -10,13 +10,14 @@
 //                                                                                 //
 //=================================================================================//
 
-#pragma once
+#include "arch/logging.h"
 
-#include "utility/algorithm.h"
-#include "utility/cross_compile.h"
-#include "utility/endian.h"
-#include "utility/identity.h"
-#include "utility/singleton.h"
-#include "utility/stopwatch.h"
-#include "utility/string_algorithm.h"
-#include "utility/unexpected.h"
+using namespace arch;
+
+#ifdef _DEBUG
+trace_level logging::m_level = trace_level::debug;
+#else
+trace_level logging::m_level = trace_level::infomation;
+#endif
+
+std::shared_ptr<logger> logging::m_logger;

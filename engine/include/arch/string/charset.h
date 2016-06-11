@@ -12,11 +12,25 @@
 
 #pragma once
 
-#include "utility/algorithm.h"
-#include "utility/cross_compile.h"
-#include "utility/endian.h"
-#include "utility/identity.h"
-#include "utility/singleton.h"
-#include "utility/stopwatch.h"
-#include "utility/string_algorithm.h"
-#include "utility/unexpected.h"
+#include <string>
+#include <locale>
+
+namespace arch
+{
+
+namespace charset
+{
+
+///	<summary>
+///	ワイド文字列をマルチバイト文字列に変換します。
+///	</summary>
+std::string narrow(const std::wstring& _widen);
+
+///	<summary>
+///	マルチバイト文字列をワイド文字列に変換します。
+///	</summary>
+std::wstring widen(const std::string& _narrow);
+
+}
+
+}

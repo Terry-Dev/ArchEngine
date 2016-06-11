@@ -14,40 +14,39 @@
 
 #include <memory>
 #include <string>
-#include "types.h"
 
 namespace arch
 {
 
-/// <summary>ƒlƒbƒgƒ[ƒNŠî’êƒNƒ‰ƒX</summary>
+/// <summary>ãƒãƒƒãƒˆãƒ¯ãƒ¼ã‚¯åŸºåº•ã‚¯ãƒ©ã‚¹</summary>
 class basic_network
 {
 public:
-	/// <summary>ƒAƒhƒŒƒXƒtƒ@ƒ~ƒŠ</summary>
+	/// <summary>ã‚¢ãƒ‰ãƒ¬ã‚¹ãƒ•ã‚¡ãƒŸãƒª</summary>
 	enum class address_family
 	{
-		unspecified,		/// <summary>w’è‚È‚µ</summary>
+		unspecified,		/// <summary>æŒ‡å®šãªã—</summary>
 		unix,				/// <summary>Unix</summary>
 		ipv4,				/// <summary>IPv4</summary>
 		ipv6,				/// <summary>IPv6</summary>
-		//IRDA,				‘Î‰‘Ò‚Á‚Ä‚Ä‚Ëi‚Í‚Ÿ‚Æ
+		//IRDA,				/// å¯¾å¿œå¾…ã£ã¦ã¦ã­ï¼ˆã¯ãã¨
 		//Bluetooth
 	};
 
-	/// <summary>ƒ\ƒPƒbƒgƒ^ƒCƒv</summary>
+	/// <summary>ã‚½ã‚±ãƒƒãƒˆã‚¿ã‚¤ãƒ—</summary>
 	enum class socket_type
 	{
-		stream,				/// <summary>ƒXƒgƒŠ[ƒ€ƒ\ƒPƒbƒg(TCP)</summary>
-		dgram,				/// <summary>ƒf[ƒ^ƒOƒ‰ƒ€ƒ\ƒPƒbƒg(UDP)</summary>
-		raw,				/// <summary>¶ƒvƒƒgƒRƒ‹ƒ\ƒPƒbƒg</summary>
-		rdm,				/// <summary>ŠmÀ‚É”z‘—‚³‚ê‚éƒƒbƒZ[ƒW</summary>
-		seq_packet			/// <summary>ƒV[ƒPƒ“ƒVƒƒƒ‹ƒpƒPƒbƒg</summary>
+		stream,				/// <summary>ã‚¹ãƒˆãƒªãƒ¼ãƒ ã‚½ã‚±ãƒƒãƒˆ(TCP)</summary>
+		dgram,				/// <summary>ãƒ‡ãƒ¼ã‚¿ã‚°ãƒ©ãƒ ã‚½ã‚±ãƒƒãƒˆ(UDP)</summary>
+		raw,				/// <summary>ç”Ÿãƒ—ãƒ­ãƒˆã‚³ãƒ«ã‚½ã‚±ãƒƒãƒˆ</summary>
+		rdm,				/// <summary>ç¢ºå®Ÿã«é…é€ã•ã‚Œã‚‹ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸</summary>
+		seq_packet			/// <summary>ã‚·ãƒ¼ã‚±ãƒ³ã‚·ãƒ£ãƒ«ãƒ‘ã‚±ãƒƒãƒˆ</summary>
 	};
 
-	/// <summary>ƒvƒƒgƒRƒ‹</summary>
+	/// <summary>ãƒ—ãƒ­ãƒˆã‚³ãƒ«</summary>
 	enum class protocol
 	{
-		any,				/// <summary>•s–¾</summary>
+		any,				/// <summary>ä¸æ˜</summary>
 		icmp,				/// <summary>Internet Control Message Protocol</summary>
 		igmp,				/// <summary>Internet Group Management Protocol</summary>
 		rfcomm,				/// <summary>RFCOMM(Bluetooth)</summary>
@@ -56,62 +55,62 @@ public:
 		icmpv6				/// <summary>Internet Control Message Protocol for IPv6</summary>
 	};
 
-	/// <summary>ƒRƒ“ƒXƒgƒ‰ƒNƒ^</summary>
-	/// <param name="family">ƒAƒhƒŒƒXƒtƒ@ƒ~ƒŠ</param>
-	/// <param name="type">ƒ\ƒPƒbƒgƒ^ƒCƒv</param>
-	/// <param name="protocol">ƒvƒƒgƒRƒ‹ƒ^ƒCƒv</param>
+	/// <summary>ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿</summary>
+	/// <param name="family">ã‚¢ãƒ‰ãƒ¬ã‚¹ãƒ•ã‚¡ãƒŸãƒª</param>
+	/// <param name="type">ã‚½ã‚±ãƒƒãƒˆã‚¿ã‚¤ãƒ—</param>
+	/// <param name="protocol">ãƒ—ãƒ­ãƒˆã‚³ãƒ«ã‚¿ã‚¤ãƒ—</param>
 	basic_network(address_family family, socket_type type, protocol protocol);
 
-	/// <summary>ƒRƒ“ƒXƒgƒ‰ƒNƒ^</summary>
+	/// <summary>ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿</summary>
 	basic_network(const basic_network& base_network);
 
-	/// <summary>ƒfƒXƒgƒ‰ƒNƒ^</summary>
+	/// <summary>ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿</summary>
 	~basic_network();
 
-	/// <summary>ƒf[ƒ^‚ª—ˆ‚Ä‚¢‚é‚©‚ğ•Ô‚µ‚Ü‚·B</summary>
-	///<return>true : ƒf[ƒ^‚ª—ˆ‚Ä‚¢‚é</return>
+	/// <summary>ãƒ‡ãƒ¼ã‚¿ãŒæ¥ã¦ã„ã‚‹ã‹ã‚’è¿”ã—ã¾ã™ã€‚</summary>
+	///<return>true : ãƒ‡ãƒ¼ã‚¿ãŒæ¥ã¦ã„ã‚‹</return>
 	bool is_received_data();
 
-	/// <summary>ˆ¶æ‚ÌƒAƒhƒŒƒX‚ğw’è‚µ‚Ü‚·B</summary>
-	/// <param name="address">ˆ¶æƒAƒhƒŒƒX ‹ó‚Åƒ|[ƒg‚Ì‚İ‚Ìw’è</param>
-	/// <param name="port">ƒ|[ƒg”Ô†</param>
-	///<return>true : ƒAƒhƒŒƒXw’èŠ®—¹</return>
+	/// <summary>å®›å…ˆã®ã‚¢ãƒ‰ãƒ¬ã‚¹ã‚’æŒ‡å®šã—ã¾ã™ã€‚</summary>
+	/// <param name="address">å®›å…ˆã‚¢ãƒ‰ãƒ¬ã‚¹ ç©ºã§ãƒãƒ¼ãƒˆã®ã¿ã®æŒ‡å®š</param>
+	/// <param name="port">ãƒãƒ¼ãƒˆç•ªå·</param>
+	///<return>true : ã‚¢ãƒ‰ãƒ¬ã‚¹æŒ‡å®šå®Œäº†</return>
 	bool set_address(int port, const std::string& address="");
 
-	/// <summary>w’è‚µ‚½ƒAƒhƒŒƒX‚ÉÚ‘±‚µ‚Ü‚·B</summary>
-	/// <return>true : Ú‘±‚É¬Œ÷</return>
+	/// <summary>æŒ‡å®šã—ãŸã‚¢ãƒ‰ãƒ¬ã‚¹ã«æ¥ç¶šã—ã¾ã™ã€‚</summary>
+	/// <return>true : æ¥ç¶šã«æˆåŠŸ</return>
 	bool connect_socket();
 
-	/// <summary>ƒoƒCƒ“ƒh‚µ‚Ü‚·B</summary>
-	/// <return>true : ƒoƒCƒ“ƒh‚É¬Œ÷</return>
+	/// <summary>ãƒã‚¤ãƒ³ãƒ‰ã—ã¾ã™ã€‚</summary>
+	/// <return>true : ãƒã‚¤ãƒ³ãƒ‰ã«æˆåŠŸ</return>
 	bool bind_socket();
 
-	/// <summary>ƒŠƒbƒXƒ“‚ğŠJn‚µ‚Ü‚·B</summary>
-	/// <return>true : ƒŠƒbƒXƒ“‚É¬Œ÷</return>
+	/// <summary>ãƒªãƒƒã‚¹ãƒ³ã‚’é–‹å§‹ã—ã¾ã™ã€‚</summary>
+	/// <return>true : ãƒªãƒƒã‚¹ãƒ³ã«æˆåŠŸ</return>
 	bool listen_socket(int back_log);
 
 
-	/// <summary>ƒRƒlƒNƒVƒ‡ƒ“‚ğŠm—§‚µ‚Ü‚·B</summary>
-	/// <return>true : Šm—§‚É¬Œ÷</return>
+	/// <summary>ã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³ã‚’ç¢ºç«‹ã—ã¾ã™ã€‚</summary>
+	/// <return>true : ç¢ºç«‹ã«æˆåŠŸ</return>
 	bool accept_socket();
 
-	/// <summary>ƒf[ƒ^‚ğ“]‘—‚µ‚Ü‚·B</summary>
-	/// <param name="data">ƒf[ƒ^</param>
-	/// <param name="length">”z—ñ’·‚³</param>
-	/// <return>true : “]‘—‚É¬Œ÷</return>
-	bool send_socket(const void* data, uint length);
+	/// <summary>ãƒ‡ãƒ¼ã‚¿ã‚’è»¢é€ã—ã¾ã™ã€‚</summary>
+	/// <param name="data">ãƒ‡ãƒ¼ã‚¿</param>
+	/// <param name="length">é…åˆ—é•·ã•</param>
+	/// <return>true : è»¢é€ã«æˆåŠŸ</return>
+	bool send_socket(const void* data, size_t length);
 
-	/// <summary>ƒf[ƒ^‚ğæ“¾‚µ‚Ü‚·B</summary>
-	/// <param name="out">æ“¾‚µ‚½ƒf[ƒ^</param>
-	/// <param name="length">æ“¾‚·‚é•¶š’·</param>
-	/// <return>æ“¾‚Å‚«‚½•¶š”</return>
+	/// <summary>ãƒ‡ãƒ¼ã‚¿ã‚’å–å¾—ã—ã¾ã™ã€‚</summary>
+	/// <param name="out">å–å¾—ã—ãŸãƒ‡ãƒ¼ã‚¿</param>
+	/// <param name="length">å–å¾—ã™ã‚‹æ–‡å­—é•·</param>
+	/// <return>å–å¾—ã§ããŸæ–‡å­—æ•°</return>
 	int receive(void* out, int length = 64);
 
-	/// <summary>’ÊM‚ğƒmƒ“ƒuƒƒbƒLƒ“ƒO‚É‚µ‚Ü‚·B</summary>
-	/// <param name="flag">true : ƒmƒ“ƒuƒƒbƒLƒ“ƒO</param>
+	/// <summary>é€šä¿¡ã‚’ãƒãƒ³ãƒ–ãƒ­ãƒƒã‚­ãƒ³ã‚°ã«ã—ã¾ã™ã€‚</summary>
+	/// <param name="flag">true : ãƒãƒ³ãƒ–ãƒ­ãƒƒã‚­ãƒ³ã‚°</param>
 	void set_non_blocking(bool flag = true);
 
-	/// <summary>Šm—§‚µ‚½ƒRƒlƒNƒVƒ‡ƒ“‚ğ•Â‚¶‚Ü‚·B</summary>
+	/// <summary>ç¢ºç«‹ã—ãŸã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³ã‚’é–‰ã˜ã¾ã™ã€‚</summary>
 	void close_socket();
 
 private:

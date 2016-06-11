@@ -12,11 +12,32 @@
 
 #pragma once
 
-#include "utility/algorithm.h"
-#include "utility/cross_compile.h"
-#include "utility/endian.h"
-#include "utility/identity.h"
-#include "utility/singleton.h"
-#include "utility/stopwatch.h"
-#include "utility/string_algorithm.h"
-#include "utility/unexpected.h"
+#include <string>
+#include <memory>
+
+class csv_reader final
+{
+public:
+	csv_reader();
+	csv_reader(const std::string& _path);
+	csv_reader(const void* _data, size_t _size);
+	~csv_reader();
+
+	uint32_t rows() const;
+	uint32_t columns(uint32_t _rows) const;
+
+	std::string get(uint32_t _rows, uint32_t _columns) const;
+	
+	template<typename T> T get(uint32_t _rows, uint32_t _columns) const
+	{
+		std::stringstream ss;
+		ss.str(get(_rows, _columns));
+		T value;
+		ss >> value;
+		return value;
+	}
+
+private:
+	class impl;
+	std::shared_ptr<impl> pimpl;
+};

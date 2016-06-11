@@ -10,8 +10,10 @@
 //                                                                                 //
 //=================================================================================//
 
-#include "arch/json.h"
-#include "arch/text_file.h"
+#include <arch/utility.h>
+#include <arch/string.h>
+#include <arch/io/json.h>
+#include <arch/io/text.h>
 
 using namespace arch;
 using namespace arch::json;

@@ -12,11 +12,31 @@
 
 #pragma once
 
-#include "utility/algorithm.h"
-#include "utility/cross_compile.h"
-#include "utility/endian.h"
-#include "utility/identity.h"
-#include "utility/singleton.h"
-#include "utility/stopwatch.h"
-#include "utility/string_algorithm.h"
-#include "utility/unexpected.h"
+#include <cstdint>
+
+namespace arch
+{
+
+namespace endian
+{
+
+enum class endian_type
+{
+	little_endian,
+	big_endian,
+};
+
+template<typename value_type> value_type swap(value_type value)
+{
+	uint8_t* p = reinterpret_cast<uint8_t*>(&value);
+	value_type swapped_value = 0;
+	for (int i = 0; i < sizeof(value_type); i++)
+	{
+		swapped_value |= p[i] << (8 * (sizeof(value_type) - i - 1));
+	}
+	return swapped_value;
+}
+
+}
+
+}
