@@ -11,7 +11,7 @@
 //=================================================================================//
 
 #include <memory>
-#include "arch/filesystem.h"
+#include <arch/io/filesystem.h>
 
 #ifdef ARCHENGINE_PLATFORM_WINDOWS
 
@@ -87,10 +87,10 @@ bool move(const std::string& path, const std::string& new_path)
 
 bool copy(const std::string& path, const std::string& new_path)
 {
-	//ƒfƒBƒŒƒNƒgƒŠ‚Ìê‡
+	//ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã®å ´åˆ
 	if(is_directory(path) && is_directory(new_path))
 	{
-		//V‚µ‚¢ƒpƒX‚ÉƒfƒBƒŒƒNƒgƒŠ‚ğì¬
+		//æ–°ã—ã„ãƒ‘ã‚¹ã«ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã‚’ä½œæˆ
 		if(CreateDirectoryA(new_path.c_str(), NULL) == 0)
 		{
 			return false;
@@ -151,7 +151,7 @@ std::vector<std::string> enumerate_files(const std::string& path, const std::str
 	{
 		do
 		{
-			//ŒŸõŒ‹‰Ê‚ªƒfƒBƒŒƒNƒgƒŠˆÈŠO‚Ìê‡‚ÍƒŠƒXƒg‚Éƒtƒ@ƒCƒ‹–¼‚ğ’Ç‰Á
+			//æ¤œç´¢çµæœãŒãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªä»¥å¤–ã®å ´åˆã¯ãƒªã‚¹ãƒˆã«ãƒ•ã‚¡ã‚¤ãƒ«åã‚’è¿½åŠ 
 			if((FindData.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) == 0)
 			{
 				FindFiles.push_back(FindData.cFileName);
@@ -180,7 +180,7 @@ std::vector<std::string> enumerate_directories(const std::string& path)
 	{
 		do
 		{
-			//ŒŸõŒ‹‰Ê‚ªƒfƒBƒŒƒNƒgƒŠ‚Ìê‡‚ÍƒŠƒXƒg‚É’Ç‰Á
+			//æ¤œç´¢çµæœãŒãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã®å ´åˆã¯ãƒªã‚¹ãƒˆã«è¿½åŠ 
 			if(strcmp(FindData.cFileName, ".") != 0 && strcmp(FindData.cFileName, "..") != 0 && (FindData.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) != 0)
 			{
 				FindFiles.push_back(FindData.cFileName);
@@ -211,7 +211,7 @@ std::vector<std::string> enumerate_files_and_directories(const std::string& path
 		{
 			if(strcmp(FindData.cFileName, ".") != 0 && strcmp(FindData.cFileName, "..") != 0)
 			{
-				//ƒŠƒXƒg‚É’Ç‰Á
+				//ãƒªã‚¹ãƒˆã«è¿½åŠ 
 				FindFiles.push_back(FindData.cFileName);
 			}
 

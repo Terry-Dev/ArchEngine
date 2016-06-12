@@ -21,7 +21,7 @@ namespace arch
 {
 
 /*!
-*	@brief F‘ŠAÊ“xA–¾“x‚ÅF‚ğ•\‚µ‚Ü‚·B
+*	@brief è‰²ç›¸ã€å½©åº¦ã€æ˜åº¦ã§è‰²ã‚’è¡¨ã—ã¾ã™ã€‚
 */
 template<class type = double>
 class hsv_color
@@ -30,15 +30,15 @@ public:
 	static_assert(std::is_floating_point<type>::value, "This type must be an floating point type.");
 
 	/*!
-	*	@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	*	@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	hsv_color() = default;
 
 	/*!
-	*	@brief F‘ŠAÊ“xA–¾“x‚ğİ’è‚µ‚Ü‚·
-	*	@param [in]	h	F‘Š
-	*	@param [in]	s	Ê“x
-	*	@param [in]	v	–¾“x
+	*	@brief è‰²ç›¸ã€å½©åº¦ã€æ˜åº¦ã‚’è¨­å®šã—ã¾ã™
+	*	@param [in]	h	è‰²ç›¸
+	*	@param [in]	s	å½©åº¦
+	*	@param [in]	v	æ˜åº¦
 	*/
 	hsv_color(type _h, type _s, type _v)
 		: h(_h), s(_s), v(_v)
@@ -46,8 +46,8 @@ public:
 	}
 
 	/*!
-	*	@brief F‚ÅF‘ŠAÊ“xA–¾“x‚ğİ’è‚µ‚Ü‚·
-	*	@param [in]	Color	F
+	*	@brief è‰²ã§è‰²ç›¸ã€å½©åº¦ã€æ˜åº¦ã‚’è¨­å®šã—ã¾ã™
+	*	@param [in]	Color	è‰²
 	*/
 	hsv_color(const uchar4& c) noexcept
 	{
@@ -55,8 +55,8 @@ public:
 	}
 
 	/*!
-	*	@brief F‚ÅF‘ŠAÊ“xA–¾“x‚ğİ’è‚µ‚Ü‚·
-	*	@param [in]	Color	F
+	*	@brief è‰²ã§è‰²ç›¸ã€å½©åº¦ã€æ˜åº¦ã‚’è¨­å®šã—ã¾ã™
+	*	@param [in]	Color	è‰²
 	*/
 	hsv_color(const vector4<type>& c) noexcept
 	{
@@ -64,7 +64,7 @@ public:
 	}
 
 	/*!
-	*	@brief ƒfƒXƒgƒ‰ƒNƒ^
+	*	@brief ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	~hsv_color() = default;
 
@@ -165,9 +165,9 @@ public:
 	}
 
 public:
-	type h;	///< F‘Š
-	type s;	///< Ê“x
-	type v;	///< –¾“x
+	type h;	///< è‰²ç›¸
+	type s;	///< å½©åº¦
+	type v;	///< æ˜åº¦
 };
 
 template<typename CharT, class type> inline std::basic_ostream<CharT>& operator <<(std::basic_ostream<CharT>& os, const hsv_color<type>& c)

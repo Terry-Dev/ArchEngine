@@ -12,8 +12,8 @@
 
 #pragma once
 
+#include <arch/io.h>
 #include "logging.h"
-#include "text_file.h"
 
 namespace arch
 {
@@ -27,7 +27,7 @@ public:
 	void write(const std::string& message, trace_level level) override;
 
 private:
-	text_writer writer;
+	text::writer writer;
 };
 
 }

@@ -73,7 +73,7 @@ private:
 
 private:
 	bool						m_HasInitialized;
-	IDirectInput8*				m_pInput;			//DirectInputインターフェース
+	IDirectInput8*				m_pInput;			//DirectInput繧､繝ｳ繧ｿ繝ｼ繝輔ぉ繝ｼ繧ｹ
 	std::vector<mouse_state>	m_MouseStates;		//
 	std::vector<keyboard_state>	m_KeyboardStates;	//
 	std::vector<joystick_state>	m_JoystickStates;	//

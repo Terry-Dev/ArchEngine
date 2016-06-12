@@ -62,26 +62,26 @@ namespace
 			0x44,	///< F10
 			0x57,	///< F11
 			0x58,	///< F12
-			0x52,	///< ƒeƒ“ƒL[‚Ì0
-			0x4F,	///< ƒeƒ“ƒL[‚Ì1
-			0x50,	///< ƒeƒ“ƒL[‚Ì2
-			0x51,	///< ƒeƒ“ƒL[‚Ì3
-			0x4B,	///< ƒeƒ“ƒL[‚Ì4
-			0x4C,	///< ƒeƒ“ƒL[‚Ì5
-			0x4D,	///< ƒeƒ“ƒL[‚Ì6
-			0x47,	///< ƒeƒ“ƒL[‚Ì7
-			0x48,	///< ƒeƒ“ƒL[‚Ì8
-			0x49,	///< ƒeƒ“ƒL[‚Ì9
-			0x53,	///< ƒeƒ“ƒL[‚Ì.
-			0xB5,	///< ƒeƒ“ƒL[‚Ì/
-			0x37,	///< ƒeƒ“ƒL[‚Ì*
-			0x4E,	///< ƒeƒ“ƒL[‚Ì+
-			0x4A,	///< ƒeƒ“ƒL[‚Ì-
-			0x9C,	///< ƒeƒ“ƒL[‚ÌEnter
-			0xC8,	///< ã
-			0xD0,	///< ‰º
-			0xCB,	///< ¶
-			0xCD,	///< ‰E
+			0x52,	///< ãƒ†ãƒ³ã‚­ãƒ¼ã®0
+			0x4F,	///< ãƒ†ãƒ³ã‚­ãƒ¼ã®1
+			0x50,	///< ãƒ†ãƒ³ã‚­ãƒ¼ã®2
+			0x51,	///< ãƒ†ãƒ³ã‚­ãƒ¼ã®3
+			0x4B,	///< ãƒ†ãƒ³ã‚­ãƒ¼ã®4
+			0x4C,	///< ãƒ†ãƒ³ã‚­ãƒ¼ã®5
+			0x4D,	///< ãƒ†ãƒ³ã‚­ãƒ¼ã®6
+			0x47,	///< ãƒ†ãƒ³ã‚­ãƒ¼ã®7
+			0x48,	///< ãƒ†ãƒ³ã‚­ãƒ¼ã®8
+			0x49,	///< ãƒ†ãƒ³ã‚­ãƒ¼ã®9
+			0x53,	///< ãƒ†ãƒ³ã‚­ãƒ¼ã®.
+			0xB5,	///< ãƒ†ãƒ³ã‚­ãƒ¼ã®/
+			0x37,	///< ãƒ†ãƒ³ã‚­ãƒ¼ã®*
+			0x4E,	///< ãƒ†ãƒ³ã‚­ãƒ¼ã®+
+			0x4A,	///< ãƒ†ãƒ³ã‚­ãƒ¼ã®-
+			0x9C,	///< ãƒ†ãƒ³ã‚­ãƒ¼ã®Enter
+			0xC8,	///< ä¸Š
+			0xD0,	///< ä¸‹
+			0xCB,	///< å·¦
+			0xCD,	///< å³
 			0x0C,	///< -
 			0x0D,	///< =
 			0x0F,	///< Tab
@@ -93,14 +93,14 @@ namespace
 			0x39,	///< Space
 			0x1A,	///< [
 			0x1B,	///< ]
-			0x1D,	///< ¶Ctrl
-			0x9D,	///< ‰ECtrl
-			0x2A,	///< ¶Shift
-			0x36,	///< ‰EShift
-			0x38,	///< ¶Alt
-			0xB8,	///< ‰EAlt
+			0x1D,	///< å·¦Ctrl
+			0x9D,	///< å³Ctrl
+			0x2A,	///< å·¦Shift
+			0x36,	///< å³Shift
+			0x38,	///< å·¦Alt
+			0xB8,	///< å³Alt
 			0x35,	///< /
-			0x2B,	///< _
+			0x2B,	///< ï¼¼
 			0x33,	///< ,
 			0x34,	///< .
 		};
@@ -165,27 +165,27 @@ namespace
 			0x7A,	///< F11
 			0x7B,	///< F12
 
-			0x60,	///< ƒeƒ“ƒL[‚Ì0
-			0x61,	///< ƒeƒ“ƒL[‚Ì1
-			0x62,	///< ƒeƒ“ƒL[‚Ì2
-			0x63,	///< ƒeƒ“ƒL[‚Ì3
-			0x64,	///< ƒeƒ“ƒL[‚Ì4
-			0x65,	///< ƒeƒ“ƒL[‚Ì5
-			0x66,	///< ƒeƒ“ƒL[‚Ì6
-			0x67,	///< ƒeƒ“ƒL[‚Ì7
-			0x68,	///< ƒeƒ“ƒL[‚Ì8
-			0x69,	///< ƒeƒ“ƒL[‚Ì9
-			0x6E,	///< ƒeƒ“ƒL[‚Ì.
-			0x6F,	///< ƒeƒ“ƒL[‚Ì/
-			0x6A,	///< ƒeƒ“ƒL[‚Ì*
-			0x6B,	///< ƒeƒ“ƒL[‚Ì+
-			0x6D,	///< ƒeƒ“ƒL[‚Ì-
-			0x00,	///< ƒeƒ“ƒL[‚ÌEnter
+			0x60,	///< ãƒ†ãƒ³ã‚­ãƒ¼ã®0
+			0x61,	///< ãƒ†ãƒ³ã‚­ãƒ¼ã®1
+			0x62,	///< ãƒ†ãƒ³ã‚­ãƒ¼ã®2
+			0x63,	///< ãƒ†ãƒ³ã‚­ãƒ¼ã®3
+			0x64,	///< ãƒ†ãƒ³ã‚­ãƒ¼ã®4
+			0x65,	///< ãƒ†ãƒ³ã‚­ãƒ¼ã®5
+			0x66,	///< ãƒ†ãƒ³ã‚­ãƒ¼ã®6
+			0x67,	///< ãƒ†ãƒ³ã‚­ãƒ¼ã®7
+			0x68,	///< ãƒ†ãƒ³ã‚­ãƒ¼ã®8
+			0x69,	///< ãƒ†ãƒ³ã‚­ãƒ¼ã®9
+			0x6E,	///< ãƒ†ãƒ³ã‚­ãƒ¼ã®.
+			0x6F,	///< ãƒ†ãƒ³ã‚­ãƒ¼ã®/
+			0x6A,	///< ãƒ†ãƒ³ã‚­ãƒ¼ã®*
+			0x6B,	///< ãƒ†ãƒ³ã‚­ãƒ¼ã®+
+			0x6D,	///< ãƒ†ãƒ³ã‚­ãƒ¼ã®-
+			0x00,	///< ãƒ†ãƒ³ã‚­ãƒ¼ã®Enter
 
-			0x26,	///< ã
-			0x28,	///< ‰º
-			0x25,	///< ¶
-			0x27,	///< ‰E
+			0x26,	///< ä¸Š
+			0x28,	///< ä¸‹
+			0x25,	///< å·¦
+			0x27,	///< å³
 
 			0xBD,	///< -
 			0x00,	///< =
@@ -200,17 +200,17 @@ namespace
 
 			0xDB,	///< [
 			0xDD,	///< ]
-			0xA2,	///< ¶Ctrl
-			0xA3,	///< ‰ECtrl
-			0xA0,	///< ¶Shift
-			0xA1,	///< ‰EShift
-			0xA4,	///< ¶Alt
-			0xA5,	///< ‰EAlt
-			0x5B,	///< ¶Windows
-			0x5C,	///< ‰EWindows
+			0xA2,	///< å·¦Ctrl
+			0xA3,	///< å³Ctrl
+			0xA0,	///< å·¦Shift
+			0xA1,	///< å³Shift
+			0xA4,	///< å·¦Alt
+			0xA5,	///< å³Alt
+			0x5B,	///< å·¦Windows
+			0x5C,	///< å³Windows
 
 			0xBF,	///< /
-			0xDC,	///< _
+			0xDC,	///< ï¼¼
 
 			0xBC,	///< ,
 			0xBE,	///< .
@@ -219,9 +219,9 @@ namespace
 			0x90,	///< NumLock
 			0x91,	///< ScrollLock
 
-			0x15,	///< ‚©‚È“ü—Í
-			0x1C,	///< •ÏŠ·
-			0x1D,	///< –³•ÏŠ·
+			0x15,	///< ã‹ãªå…¥åŠ›
+			0x1C,	///< å¤‰æ›
+			0x1D,	///< ç„¡å¤‰æ›
 			0xDC,	///< \
 
 			0x00,	///< SysRq
@@ -256,10 +256,10 @@ input_manager& input_manager::get_instance()
 
 bool input_manager::initialize(HINSTANCE hInstance)
 {
-	// DirectInput‚ğ‰Šú‰»
+	// DirectInputã‚’åˆæœŸåŒ–
 	if (m_DirectInput.initialize(hInstance))
 	{
-		logging::infomation("DirectInput‚ğg—p‚µ‚Ü‚·B");
+		logging::infomation("DirectInputã‚’ä½¿ç”¨ã—ã¾ã™ã€‚");
 
 		const auto& mouseStates = m_DirectInput.get_mouse_states();
 		for (const auto& state : mouseStates)
@@ -282,7 +282,7 @@ bool input_manager::initialize(HINSTANCE hInstance)
 
 	if (m_Wintab.initialize())
 	{
-		logging::infomation(string_format("Wintab‚ğg—p‚Å‚«‚Ü‚·B(Version:%d)", m_Wintab.getVersion()));
+		logging::infomation(string_format("Wintabã‚’ä½¿ç”¨ã§ãã¾ã™ã€‚(Version:%d)", m_Wintab.getVersion()));
 		pen::supports = true;
 
 		const auto& maxPosition = m_Wintab.getMaxPosition();
@@ -292,7 +292,7 @@ bool input_manager::initialize(HINSTANCE hInstance)
 		if (m_Wintab.supportsPressure())
 		{
 			const auto& pressure = m_Wintab.getPressureInfo();
-			logging::infomation(string_format("•Mˆ³‚ğ—˜—p‚Å‚«‚Ü‚·B(Max:%d, Min:%d, Resolution:%d)", pressure.max, pressure.min, pressure.resolution));
+			logging::infomation(string_format("ç­†åœ§ã‚’åˆ©ç”¨ã§ãã¾ã™ã€‚(Max:%d, Min:%d, Resolution:%d)", pressure.max, pressure.min, pressure.resolution));
 			pen::supports_pressure = true;
 		}
 
@@ -300,7 +300,7 @@ bool input_manager::initialize(HINSTANCE hInstance)
 		{
 			const auto& altitude = m_Wintab.getAltitudeInfo();
 			const auto& azimuth = m_Wintab.getAzimuthInfo();
-			logging::infomation(string_format("ŒX‚«‚ğ—˜—p‚Å‚«‚Ü‚·BAltitude(Max:%d, Min:%d, Resolution:%d) Azimuth(Max:%d, Min:%d, Resolution:%d)", altitude.max, altitude.min, altitude.resolution, azimuth.max, azimuth.min, azimuth.resolution));
+			logging::infomation(string_format("å‚¾ãã‚’åˆ©ç”¨ã§ãã¾ã™ã€‚Altitude(Max:%d, Min:%d, Resolution:%d) Azimuth(Max:%d, Min:%d, Resolution:%d)", altitude.max, altitude.min, altitude.resolution, azimuth.max, azimuth.min, azimuth.resolution));
 			pen::supports_tilt = true;
 		}
 	}
@@ -336,7 +336,7 @@ void input_manager::finalize()
 
 bool input_manager::update()
 {
-	// DirectInput‚ğXV
+	// DirectInputã‚’æ›´æ–°
 	m_DirectInput.update();
 
 	std::array<input_state*, 8> mouse_state_refs =
@@ -351,7 +351,7 @@ bool input_manager::update()
 		&mouse::button8,
 	};
 
-	// ƒfƒtƒHƒ‹ƒg‚Í0”Ô–Ú‚Ìó‘Ô‚ğ—p‚¢‚é
+	// ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯0ç•ªç›®ã®çŠ¶æ…‹ã‚’ç”¨ã„ã‚‹
 	const auto& mouseStates = m_DirectInput.get_mouse_states();
 	if (!mouseStates.empty())
 	{
@@ -526,13 +526,13 @@ LRESULT input_manager::localWndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM 
 	switch(uMsg)
 	{
 	/*
-	// “ü—ÍƒCƒxƒ“ƒg(RawInput)
+	// å…¥åŠ›ã‚¤ãƒ™ãƒ³ãƒˆ(RawInput)
 	case WM_INPUT:
 		m_Rawinput_manager.onInput(hwnd, wParam, lParam);
 		onUpdateMouse();
 		break;
 	*/
-	// “ü—ÍƒCƒxƒ“ƒg(Wintab)
+	// å…¥åŠ›ã‚¤ãƒ™ãƒ³ãƒˆ(Wintab)
 	case WT_PACKET:
 	case WT_CSRCHANGE:
 	case WT_CTXOPEN:
@@ -545,24 +545,24 @@ LRESULT input_manager::localWndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM 
 		onUpdatePen();
 		return 0;
 
-	// ƒ^ƒbƒ`“ü—ÍƒCƒxƒ“ƒg
+	// ã‚¿ãƒƒãƒå…¥åŠ›ã‚¤ãƒ™ãƒ³ãƒˆ
 	case WM_TOUCH:
 		onTouch(hwnd, wParam, lParam);
 		return 0;
 
-	// ƒ}ƒEƒXˆÚ“®ƒCƒxƒ“ƒg
+	// ãƒã‚¦ã‚¹ç§»å‹•ã‚¤ãƒ™ãƒ³ãƒˆ
 	case WM_MOUSEMOVE:
-		// ƒCƒxƒ“ƒgˆ—
+		// ã‚¤ãƒ™ãƒ³ãƒˆå‡¦ç†
 		onMouseMove(hwnd, wParam, lParam);
 		break;
 
 	/*
-	// ¶ƒ{ƒ^ƒ“‰Ÿ‰ºƒCƒxƒ“ƒg
+	// å·¦ãƒœã‚¿ãƒ³æŠ¼ä¸‹ã‚¤ãƒ™ãƒ³ãƒˆ
 	case WM_LBUTTONDOWN:
 		onLButtonDown(hwnd, wParam, lParam);
 		return 0;
 
-	// ¶ƒ{ƒ^ƒ“‰ŸãƒCƒxƒ“ƒg
+	// å·¦ãƒœã‚¿ãƒ³æŠ¼ä¸Šã‚¤ãƒ™ãƒ³ãƒˆ
 	case WM_LBUTTONUP:
 		onLButtonUp(hwnd, wParam, lParam);
 		return 0;
@@ -572,30 +572,30 @@ LRESULT input_manager::localWndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM 
 		//WMKeyDown(wParam);
 		break;
 
-	//ƒL[‚ª‰Ÿ‚³‚ê•¶š‚ª“ü—Í‚³‚ê‚½ê‡
+	//ã‚­ãƒ¼ãŒæŠ¼ã•ã‚Œæ–‡å­—ãŒå…¥åŠ›ã•ã‚ŒãŸå ´åˆ
 	case WM_CHAR:
 		//WMChar(wParam);
 		break;
 
-	case WM_IME_SETCONTEXT:			//IMEƒEƒBƒ“ƒhƒE‚Ìó‘Ô•Ï‰»
+	case WM_IME_SETCONTEXT:			//IMEã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®çŠ¶æ…‹å¤‰åŒ–
 		//lParam = 0;
 		break;
 
-	case WM_IME_STARTCOMPOSITION:	//IME‚Ì“ü—Íó•tŠJn
+	case WM_IME_STARTCOMPOSITION:	//IMEã®å…¥åŠ›å—ä»˜é–‹å§‹
 		//m_EditFlag = true;
 		break;
 
-	case WM_IME_ENDCOMPOSITION:		//IME‚Ì“ü—Íó•tI—¹
+	case WM_IME_ENDCOMPOSITION:		//IMEã®å…¥åŠ›å—ä»˜çµ‚äº†
 		//m_EditFlag = false;
 		//m_EditString = L"\0";
 		//m_EditInputPosition = 0;
 		break;
 
-	case WM_IME_COMPOSITION:		//IME‚Ì“ü—Í‚³‚ê‚½•¶š‚ª•Ï‰»
+	case WM_IME_COMPOSITION:		//IMEã®å…¥åŠ›ã•ã‚ŒãŸæ–‡å­—ãŒå¤‰åŒ–
 		//Composition(lParam);
 		break;
 
-	case WM_IME_NOTIFY:				//IME‚Ìó‘Ô‚ª•Ï‰»
+	case WM_IME_NOTIFY:				//IMEã®çŠ¶æ…‹ãŒå¤‰åŒ–
 		//Notify(wParam);
 		break;
 	*/
@@ -617,23 +617,23 @@ void input_manager::onLButtonDown(HWND hwnd, WPARAM wParam, LPARAM lParam)
 	const LPARAM MouseEventfromTouch = 0xff515700;
 	const LPARAM TouchEventfromTouch = 0x80;
 
-	// ƒCƒxƒ“ƒg‚ªƒ^ƒbƒ`ƒCƒxƒ“ƒg‚©‚Ç‚¤‚©”»’è
+	// ã‚¤ãƒ™ãƒ³ãƒˆãŒã‚¿ãƒƒãƒã‚¤ãƒ™ãƒ³ãƒˆã‹ã©ã†ã‹åˆ¤å®š
 	auto extraInfo = GetMessageExtraInfo();
 	if ((extraInfo & MouseEventfromTouch) == MouseEventfromTouch)
 	{
-		// ƒ^ƒbƒ`‚É‚æ‚éƒCƒxƒ“ƒg‚©ƒyƒ“‚É‚æ‚éƒCƒxƒ“ƒg‚©”»’è
+		// ã‚¿ãƒƒãƒã«ã‚ˆã‚‹ã‚¤ãƒ™ãƒ³ãƒˆã‹ãƒšãƒ³ã«ã‚ˆã‚‹ã‚¤ãƒ™ãƒ³ãƒˆã‹åˆ¤å®š
 		if ((extraInfo & TouchEventfromTouch) == TouchEventfromTouch)
 		{
-			// ƒ^ƒbƒ`ƒCƒxƒ“ƒg
+			// ã‚¿ãƒƒãƒã‚¤ãƒ™ãƒ³ãƒˆ
 		}
 		else
 		{
-			// ƒyƒ“ƒCƒxƒ“ƒg
+			// ãƒšãƒ³ã‚¤ãƒ™ãƒ³ãƒˆ
 		}
 	}
 	else
 	{
-		// ƒ}ƒEƒXƒCƒxƒ“ƒg
+		// ãƒã‚¦ã‚¹ã‚¤ãƒ™ãƒ³ãƒˆ
 		mouse::left.pressed = true;
 		mouse::left.released = false;
 		mouse::left.clicked = false;
@@ -645,23 +645,23 @@ void input_manager::onLButtonUp(HWND hwnd, WPARAM wParam, LPARAM lParam)
 	const LPARAM MouseEventfromTouch = 0xff515700;
 	const LPARAM TouchEventfromTouch = 0x80;
 
-	// ƒCƒxƒ“ƒg‚ªƒ^ƒbƒ`ƒCƒxƒ“ƒg‚©‚Ç‚¤‚©”»’è
+	// ã‚¤ãƒ™ãƒ³ãƒˆãŒã‚¿ãƒƒãƒã‚¤ãƒ™ãƒ³ãƒˆã‹ã©ã†ã‹åˆ¤å®š
 	auto extraInfo = GetMessageExtraInfo();
 	if ((extraInfo & MouseEventfromTouch) == MouseEventfromTouch)
 	{
-		// ƒ^ƒbƒ`‚É‚æ‚éƒCƒxƒ“ƒg‚©ƒyƒ“‚É‚æ‚éƒCƒxƒ“ƒg‚©”»’è
+		// ã‚¿ãƒƒãƒã«ã‚ˆã‚‹ã‚¤ãƒ™ãƒ³ãƒˆã‹ãƒšãƒ³ã«ã‚ˆã‚‹ã‚¤ãƒ™ãƒ³ãƒˆã‹åˆ¤å®š
 		if ((extraInfo & TouchEventfromTouch) == TouchEventfromTouch)
 		{
-			// ƒ^ƒbƒ`ƒCƒxƒ“ƒg
+			// ã‚¿ãƒƒãƒã‚¤ãƒ™ãƒ³ãƒˆ
 		}
 		else
 		{
-			// ƒyƒ“ƒCƒxƒ“ƒg
+			// ãƒšãƒ³ã‚¤ãƒ™ãƒ³ãƒˆ
 		}
 	}
 	else
 	{
-		// ƒ}ƒEƒXƒCƒxƒ“ƒg
+		// ãƒã‚¦ã‚¹ã‚¤ãƒ™ãƒ³ãƒˆ
 		mouse::left.pressed = false;
 		mouse::left.released = true;
 		mouse::left.clicked = false;
@@ -672,13 +672,13 @@ void input_manager::onMouseMove(HWND hwnd, WPARAM wParam, LPARAM lParam)
 {
 	POINT point;
 
-	// ƒJ[ƒ\ƒ‹‚ÌˆÊ’u‚ğæ“¾
+	// ã‚«ãƒ¼ã‚½ãƒ«ã®ä½ç½®ã‚’å–å¾—
 	if(GetCursorPos(&point) == FALSE)
 	{
 		return;
 	}
 
-	// ƒNƒ‰ƒCƒAƒ“ƒg—Ìˆæ‚Ì¶ã‚©‚çŒ©‚½ƒ}ƒEƒXÀ•W‚ğZo
+	// ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆé ˜åŸŸã®å·¦ä¸Šã‹ã‚‰è¦‹ãŸãƒã‚¦ã‚¹åº§æ¨™ã‚’ç®—å‡º
 	if(ScreenToClient(hwnd, &point) == FALSE)
 	{
 		return;
@@ -712,12 +712,12 @@ void input_manager::onTouch(HWND hwnd, WPARAM wParam, LPARAM lParam)
 			touch::infos[i].position.y = point.y;
 			touch::infos[i].move = double2::zero();
 
-			// ˆÚ“®ƒCƒxƒ“ƒg‚Ìê‡‚ÍˆÚ“®—Ê‚ÌXV‚ğs‚¤
+			// ç§»å‹•ã‚¤ãƒ™ãƒ³ãƒˆã®å ´åˆã¯ç§»å‹•é‡ã®æ›´æ–°ã‚’è¡Œã†
 			if ((inputs[i].dwFlags & TOUCHEVENTF_MOVE) == TOUCHEVENTF_MOVE)
 			{
 				for (auto& prevInput : m_PreviousTouchInputs)
 				{
-					// ‘O‰ñ‚Ì“ü—ÍƒCƒxƒ“ƒg‚ª‚ ‚Á‚½ê‡‚Í‘O‰ñ‚ÌˆÊ’u‚©‚çˆÚ“®—Ê‚ğZo
+					// å‰å›ã®å…¥åŠ›ã‚¤ãƒ™ãƒ³ãƒˆãŒã‚ã£ãŸå ´åˆã¯å‰å›ã®ä½ç½®ã‹ã‚‰ç§»å‹•é‡ã‚’ç®—å‡º
 					if (inputs[i].dwID == prevInput.dwID)
 					{
 						touch::infos[i].move.x = static_cast<double>(inputs[i].x - prevInput.x) / 100.0;
@@ -735,14 +735,14 @@ void input_manager::onTouch(HWND hwnd, WPARAM wParam, LPARAM lParam)
 
 void input_manager::onUpdateMouse() const
 {
-	// ƒCƒxƒ“ƒgˆ—Œã‚Ì’l‚ğXV
+	// ã‚¤ãƒ™ãƒ³ãƒˆå‡¦ç†å¾Œã®å€¤ã‚’æ›´æ–°
 	const auto& states = m_RawInput.get_mouse_states();
 	if (states.empty())
 	{
 		return;
 	}
 
-	// ƒfƒtƒHƒ‹ƒg‚Í‘S‚Ä‚Ìƒ}ƒEƒX‚Ìó‘Ô‚ğ—p‚¢‚é
+	// ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯å…¨ã¦ã®ãƒã‚¦ã‚¹ã®çŠ¶æ…‹ã‚’ç”¨ã„ã‚‹
 	/*
 	for (const auto& state : states)
 	{
@@ -760,14 +760,14 @@ void input_manager::onUpdateMouse() const
 
 void input_manager::onUpdateKeyboard() const
 {
-	// ƒCƒxƒ“ƒgˆ—Œã‚Ì’l‚ğXV
+	// ã‚¤ãƒ™ãƒ³ãƒˆå‡¦ç†å¾Œã®å€¤ã‚’æ›´æ–°
 	const auto& states = m_RawInput.get_keyboard_states();
 	if (states.empty())
 	{
 		return;
 	}
 
-	// ƒfƒtƒHƒ‹ƒg‚Í0”Ô–Ú‚Ìó‘Ô
+	// ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯0ç•ªç›®ã®çŠ¶æ…‹
 	/*
 	const size_t keyCount = keyboard::keys.size();
 	for (uint i = 0; i < keyCount; i++)

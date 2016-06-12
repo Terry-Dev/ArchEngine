@@ -65,30 +65,30 @@ input_state keyboard::key_f10;
 input_state keyboard::key_f11;
 input_state keyboard::key_f12;
 
-input_state keyboard::key_num_0;		///< ƒeƒ“ƒL[‚Ì0
-input_state keyboard::key_num_1;		///< ƒeƒ“ƒL[‚Ì1
-input_state keyboard::key_num_2;		///< ƒeƒ“ƒL[‚Ì2
-input_state keyboard::key_num_3;		///< ƒeƒ“ƒL[‚Ì3
-input_state keyboard::key_num_4;		///< ƒeƒ“ƒL[‚Ì4
-input_state keyboard::key_num_5;		///< ƒeƒ“ƒL[‚Ì5
-input_state keyboard::key_num_6;		///< ƒeƒ“ƒL[‚Ì6
-input_state keyboard::key_num_7;		///< ƒeƒ“ƒL[‚Ì7
-input_state keyboard::key_num_8;		///< ƒeƒ“ƒL[‚Ì8
-input_state keyboard::key_num_9;		///< ƒeƒ“ƒL[‚Ì9
+input_state keyboard::key_num_0;		///< ãƒ†ãƒ³ã‚­ãƒ¼ã®0
+input_state keyboard::key_num_1;		///< ãƒ†ãƒ³ã‚­ãƒ¼ã®1
+input_state keyboard::key_num_2;		///< ãƒ†ãƒ³ã‚­ãƒ¼ã®2
+input_state keyboard::key_num_3;		///< ãƒ†ãƒ³ã‚­ãƒ¼ã®3
+input_state keyboard::key_num_4;		///< ãƒ†ãƒ³ã‚­ãƒ¼ã®4
+input_state keyboard::key_num_5;		///< ãƒ†ãƒ³ã‚­ãƒ¼ã®5
+input_state keyboard::key_num_6;		///< ãƒ†ãƒ³ã‚­ãƒ¼ã®6
+input_state keyboard::key_num_7;		///< ãƒ†ãƒ³ã‚­ãƒ¼ã®7
+input_state keyboard::key_num_8;		///< ãƒ†ãƒ³ã‚­ãƒ¼ã®8
+input_state keyboard::key_num_9;		///< ãƒ†ãƒ³ã‚­ãƒ¼ã®9
 
-input_state keyboard::key_num_period;	///< ƒeƒ“ƒL[‚Ì.
-input_state keyboard::key_num_divide;	///< ƒeƒ“ƒL[‚Ì/
-input_state keyboard::key_num_multiply;	///< ƒeƒ“ƒL[‚Ì*
-input_state keyboard::key_num_plus;		///< ƒeƒ“ƒL[‚Ì+
-input_state keyboard::key_num_minus;		///< ƒeƒ“ƒL[‚Ì-
-input_state keyboard::key_num_enter;		///< ƒeƒ“ƒL[‚ÌEnter
+input_state keyboard::key_num_period;	///< ãƒ†ãƒ³ã‚­ãƒ¼ã®.
+input_state keyboard::key_num_divide;	///< ãƒ†ãƒ³ã‚­ãƒ¼ã®/
+input_state keyboard::key_num_multiply;	///< ãƒ†ãƒ³ã‚­ãƒ¼ã®*
+input_state keyboard::key_num_plus;		///< ãƒ†ãƒ³ã‚­ãƒ¼ã®+
+input_state keyboard::key_num_minus;		///< ãƒ†ãƒ³ã‚­ãƒ¼ã®-
+input_state keyboard::key_num_enter;		///< ãƒ†ãƒ³ã‚­ãƒ¼ã®Enter
 
 input_state keyboard::key_escape;	///< Esc
 
-input_state keyboard::key_up;		///< ã
-input_state keyboard::key_down;		///< ‰º
-input_state keyboard::key_left;		///< ¶
-input_state keyboard::key_right;		///< ‰E
+input_state keyboard::key_up;		///< ä¸Š
+input_state keyboard::key_down;		///< ä¸‹
+input_state keyboard::key_left;		///< å·¦
+input_state keyboard::key_right;		///< å³
 
 input_state keyboard::key_minus;			///< -
 input_state keyboard::key_equals;		///< =
@@ -103,15 +103,15 @@ input_state keyboard::key_space;			///< Space
 
 input_state keyboard::key_left_bracket;	///< [
 input_state keyboard::key_right_bracket;	///< ]
-input_state keyboard::key_left_control;	///< ¶Ctrl
-input_state keyboard::key_right_control;	///< ‰ECtrl
-input_state keyboard::key_left_shift;	///< ¶Shift
-input_state keyboard::key_right_shift;	///< ‰EShift
-input_state keyboard::key_left_alt;		///< ¶Alt
-input_state keyboard::key_right_alt;		///< ‰EAlt
+input_state keyboard::key_left_control;	///< å·¦Ctrl
+input_state keyboard::key_right_control;	///< å³Ctrl
+input_state keyboard::key_left_shift;	///< å·¦Shift
+input_state keyboard::key_right_shift;	///< å³Shift
+input_state keyboard::key_left_alt;		///< å·¦Alt
+input_state keyboard::key_right_alt;		///< å³Alt
 
 input_state keyboard::key_slash;			///< /
-input_state keyboard::key_backslash;		///< _
+input_state keyboard::key_backslash;		///< ï¼¼
 
 input_state keyboard::key_comma;			///< ,
 input_state keyboard::key_period;		///< .

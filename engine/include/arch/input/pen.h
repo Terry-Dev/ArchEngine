@@ -25,13 +25,13 @@ static bool supports_pressure;
 static bool supports_tilt;
 static bool is_eraser;
 
-/// <value>•Mˆ³(0`1)</value>
+/// <value>ç­†åœ§(0ï½1)</value>
 static double pressure;
 
-/// <value>ƒ‰ƒWƒAƒ“’PˆÊ‚Ì‚’¼Šp(0`ƒÎ/2)</value>
+/// <value>ãƒ©ã‚¸ã‚¢ãƒ³å˜ä½ã®å‚ç›´è§’(0ï½Ï€/2)</value>
 static double altitude;
 
-/// <value>ƒ‰ƒWƒAƒ“’PˆÊ‚Ì•ûˆÊŠp(0`2ƒÎ)</value>
+/// <value>ãƒ©ã‚¸ã‚¢ãƒ³å˜ä½ã®æ–¹ä½è§’(0ï½2Ï€)</value>
 static double azimuth;
 
 };

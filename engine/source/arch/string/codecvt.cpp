@@ -52,7 +52,7 @@ std::string codecvt_ansi::from_utf16be(const std::u16string& _utf16be)
 	widen.reserve(size);
 	for (size_t i = 0; i < size; i += sizeof(wchar_t))
 	{
-		widen.push_back(endian::swap(reinterpret_cast<const wchar_t*>(_utf16be.data())[i]));
+		widen.push_back(endian_swap(reinterpret_cast<const wchar_t*>(_utf16be.data())[i]));
 	}
 	return std::move(charset::narrow(widen));
 }
@@ -86,6 +86,7 @@ std::string codecvt_utf8::from_utf16le(const std::u16string& _utf16le)
 	auto pointer = reinterpret_cast<const int16_t*>(_utf16le.data());
 	return std::move(cvt.to_bytes(pointer, pointer + _utf16le.size()));
 	/*/
+	VS2015の不具合で使用できない
 	std::wstring_convert<std::codecvt_utf8_utf16<char16_t, 1114111UL, std::little_endian>, char16_t> cvt;
 	return std::move(cvt.to_bytes(_utf16le));
 	//*/
@@ -161,7 +162,7 @@ std::u16string codecvt_utf16le::from_utf16be(const std::u16string& _utf16be)
 	utf16le.reserve(_utf16be.size());
 	for (char16_t c : _utf16be)
 	{
-		utf16le.push_back(endian::swap(c));
+		utf16le.push_back(endian_swap(c));
 	}
 	return std::move(utf16le);
 }
@@ -204,7 +205,7 @@ std::u16string codecvt_utf16be::from_utf16le(const std::u16string& _utf16le)
 	utf16be.reserve(_utf16le.size());
 	for (char16_t c : _utf16le)
 	{
-		utf16be.push_back(endian::swap(c));
+		utf16be.push_back(endian_swap(c));
 	}
 	return std::move(utf16be);
 }

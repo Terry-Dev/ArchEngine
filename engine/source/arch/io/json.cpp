@@ -69,7 +69,7 @@ public:
 
 	void read(const std::string& filepath)
 	{
-		text_reader reader(filepath);
+		text::reader reader(filepath);
 		if (!reader)
 		{
 			return;
@@ -89,7 +89,7 @@ public:
 	{
 		std::string data = serialize();
 
-		text_writer writer(filepath);
+		text::writer writer(filepath);
 		if (!writer)
 		{
 			return false;

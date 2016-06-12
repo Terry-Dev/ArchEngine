@@ -29,13 +29,13 @@ public:
 	bool supports_touch() const;
 	bool supports_multi_touch() const;
 
-	static LRESULT CALLBACK	GlobalWndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);	///< グローバルウィンドウプロシージャ
+	static LRESULT CALLBACK	GlobalWndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);	///< 繧ｰ繝ｭ繝ｼ繝舌Ν繧ｦ繧｣繝ｳ繝峨え繝励Ο繧ｷ繝ｼ繧ｸ繝｣
 
 private:
 	input_manager();
 	~input_manager();
 
-	LRESULT localWndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);					///< ローカルウィンドウプロシージャ
+	LRESULT localWndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);					///< 繝ｭ繝ｼ繧ｫ繝ｫ繧ｦ繧｣繝ｳ繝峨え繝励Ο繧ｷ繝ｼ繧ｸ繝｣
 
 	void onLButtonDown(HWND hwnd, WPARAM wParam, LPARAM lParam);
 	void onLButtonUp(HWND hwnd, WPARAM wParam, LPARAM lParam);

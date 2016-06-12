@@ -19,17 +19,17 @@ namespace rawinput
 
 struct mouse_state
 {
-	HANDLE device_handle;				// ƒfƒoƒCƒXƒnƒ“ƒhƒ‹
-	std::string name;					// ƒfƒoƒCƒX–¼
-	int3 move;							// ˆÚ“®—Ê
-	std::array<input_state, 0x08> keys;	// ƒL[‚Ìó‘Ô
+	HANDLE device_handle;				// ãƒ‡ãƒã‚¤ã‚¹ãƒãƒ³ãƒ‰ãƒ«
+	std::string name;					// ãƒ‡ãƒã‚¤ã‚¹å
+	int3 move;							// ç§»å‹•é‡
+	std::array<input_state, 0x08> keys;	// ã‚­ãƒ¼ã®çŠ¶æ…‹
 };
 
 struct keyboard_state
 {
-	HANDLE device_handle;				// ƒfƒoƒCƒXƒnƒ“ƒhƒ‹
-	std::string name;					// ƒfƒoƒCƒX–¼
-	std::array<input_state, 0xff> keys;	// ƒL[‚Ìó‘Ô
+	HANDLE device_handle;				// ãƒ‡ãƒã‚¤ã‚¹ãƒãƒ³ãƒ‰ãƒ«
+	std::string name;					// ãƒ‡ãƒã‚¤ã‚¹å
+	std::array<input_state, 0xff> keys;	// ã‚­ãƒ¼ã®çŠ¶æ…‹
 };
 
 class device

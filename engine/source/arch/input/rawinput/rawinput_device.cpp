@@ -22,24 +22,24 @@ bool device::reset()
 	uint deviceCount;
 	if (GetRawInputDeviceList(NULL, &deviceCount, sizeof(RAWINPUTDEVICELIST)) == -1)
 	{
-		logging::error("Ú‘±‚³‚ê‚Ä‚¢‚éƒfƒoƒCƒX”‚Ìæ“¾‚É¸”s‚µ‚Ü‚µ‚½B", "initialize", "Device");
+		logging::error("æ¥ç¶šã•ã‚Œã¦ã„ã‚‹ãƒ‡ãƒã‚¤ã‚¹æ•°ã®å–å¾—ã«å¤±æ•—ã—ã¾ã—ãŸã€‚", "initialize", "Device");
 		return false;
 	}
 
 	m_RawInputDeviceLists.resize(deviceCount);
 	if (GetRawInputDeviceList(m_RawInputDeviceLists.data(), &deviceCount, sizeof(RAWINPUTDEVICELIST)) == -1)
 	{
-		logging::error("Ú‘±‚³‚ê‚Ä‚¢‚éƒfƒoƒCƒX‚Ìæ“¾‚É¸”s‚µ‚Ü‚µ‚½B", "initialize", "Device");
+		logging::error("æ¥ç¶šã•ã‚Œã¦ã„ã‚‹ãƒ‡ãƒã‚¤ã‚¹ã®å–å¾—ã«å¤±æ•—ã—ã¾ã—ãŸã€‚", "initialize", "Device");
 		return false;
 	}
 
 	for (uint i = 0; i < deviceCount; i++)
 	{
-		// DeviceID‚ğæ“¾‚·‚é
+		// DeviceIDã‚’å–å¾—ã™ã‚‹
 		uint nameSize;
 		if (GetRawInputDeviceInfo(m_RawInputDeviceLists[i].hDevice, RIDI_DEVICENAME, NULL, &nameSize) == -1)
 		{
-			logging::error("DeviceID‚ÌƒTƒCƒY‚Ìæ“¾‚É¸”s‚µ‚Ü‚µ‚½B", "initialize", "Device");
+			logging::error("DeviceIDã®ã‚µã‚¤ã‚ºã®å–å¾—ã«å¤±æ•—ã—ã¾ã—ãŸã€‚", "initialize", "Device");
 			return false;
 		}
 
@@ -47,11 +47,11 @@ bool device::reset()
 		inputDeviceName.resize(nameSize);
 		if (GetRawInputDeviceInfo(m_RawInputDeviceLists[i].hDevice, RIDI_DEVICENAME, &inputDeviceName[0], &nameSize) < 0)
 		{
-			logging::error("DeviceID‚Ìæ“¾‚É¸”s‚µ‚Ü‚µ‚½B", "initialize", "Device");
+			logging::error("DeviceIDã®å–å¾—ã«å¤±æ•—ã—ã¾ã—ãŸã€‚", "initialize", "Device");
 			return false;
 		}
 
-		// RawInput‚Åæ“¾‚µ‚½DeviceID‚©‚ç»•i–¼‚ğæ“¾‚·‚é
+		// RawInputã§å–å¾—ã—ãŸDeviceIDã‹ã‚‰è£½å“åã‚’å–å¾—ã™ã‚‹
 		std::string productName = inputDeviceName;
 		HANDLE hid = CreateFile(inputDeviceName.data(), GENERIC_READ | GENERIC_WRITE, FILE_SHARE_READ | FILE_SHARE_WRITE, NULL, OPEN_EXISTING, NULL, NULL);
 		if (hid != INVALID_HANDLE_VALUE)
@@ -60,17 +60,17 @@ bool device::reset()
 			wideProductName.resize(126);
 			if (HidD_GetProductString(hid, &wideProductName[0], wideProductName.size()) != TRUE)
 			{
-				logging::error("»•i–¼‚Ìæ“¾‚É¸”s‚µ‚Ü‚µ‚½B", "initialize", "Device");
+				logging::error("è£½å“åã®å–å¾—ã«å¤±æ•—ã—ã¾ã—ãŸã€‚", "initialize", "Device");
 			}
 			CloseHandle(hid);
 
 			productName = std::move(charset::narrow(wideProductName));
 		}
 
-		// ƒfƒoƒCƒX‚Ìí—Ş‚ğ’²‚×‚é
+		// ãƒ‡ãƒã‚¤ã‚¹ã®ç¨®é¡ã‚’èª¿ã¹ã‚‹
 		switch (m_RawInputDeviceLists[i].dwType)
 		{
-		// ƒ}ƒEƒXƒfƒoƒCƒX
+		// ãƒã‚¦ã‚¹ãƒ‡ãƒã‚¤ã‚¹
 		case RIM_TYPEMOUSE:
 		{
 			mouse_state state;
@@ -90,7 +90,7 @@ bool device::reset()
 			break;
 		}
 
-		// ƒL[ƒ{[ƒhƒfƒoƒCƒX
+		// ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰ãƒ‡ãƒã‚¤ã‚¹
 		case RIM_TYPEKEYBOARD:
 		{
 			keyboard_state state;
@@ -116,16 +116,16 @@ bool device::reset()
 
 bool device::register_window(HWND hwnd) const
 {
-	// WM_INPUT‚ÅƒƒbƒZ[ƒW‚ğæ“¾‚Å‚«‚é‚æ‚¤‚Éİ’è
+	// WM_INPUTã§ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’å–å¾—ã§ãã‚‹ã‚ˆã†ã«è¨­å®š
 	RAWINPUTDEVICE rawInputDevice[2];
         
-	// ƒ}ƒEƒX
+	// ãƒã‚¦ã‚¹
 	rawInputDevice[0].usUsagePage = 0x01; 
 	rawInputDevice[0].usUsage = 0x02; 
 	rawInputDevice[0].dwFlags = 0;
 	rawInputDevice[0].hwndTarget = hwnd;
 
-	// ƒL[ƒ{[ƒh
+	// ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰
 	rawInputDevice[1].usUsagePage = 0x01; 
 	rawInputDevice[1].usUsage = 0x06;
 	rawInputDevice[1].dwFlags = 0;
@@ -133,7 +133,7 @@ bool device::register_window(HWND hwnd) const
 
 	if (RegisterRawInputDevices(rawInputDevice, 2, sizeof(RAWINPUTDEVICE) == FALSE))
 	{
-		logging::error("ƒfƒoƒCƒX‚Ì“o˜^‚É¸”s‚µ‚Ü‚µ‚½B", "addWindow", "Device");
+		logging::error("ãƒ‡ãƒã‚¤ã‚¹ã®ç™»éŒ²ã«å¤±æ•—ã—ã¾ã—ãŸã€‚", "addWindow", "Device");
 		return false;
 	}
 	return true;
@@ -146,13 +146,13 @@ void device::on_input(HWND hwnd, WPARAM wParam, LPARAM lParam)
 	uint size;
 	if (GetRawInputData(inputHandle, RID_INPUT, NULL, &size, sizeof(RAWINPUTHEADER)) == -1)
 	{
-		logging::error("“ü—Íƒf[ƒ^ƒTƒCƒY‚Ìæ“¾‚É¸”s‚µ‚Ü‚µ‚½B", "onInput", "Device");
+		logging::error("å…¥åŠ›ãƒ‡ãƒ¼ã‚¿ã‚µã‚¤ã‚ºã®å–å¾—ã«å¤±æ•—ã—ã¾ã—ãŸã€‚", "onInput", "Device");
 		return;
 	}
 	std::vector<RAWINPUT> inputs(size / sizeof(RAWINPUT));
 	if (GetRawInputData(inputHandle, RID_INPUT, inputs.data(), &size, sizeof(RAWINPUTHEADER)) == -1)
 	{
-		logging::error("“ü—Íƒf[ƒ^‚Ìæ“¾‚É¸”s‚µ‚Ü‚µ‚½B", "onInput", "Device");
+		logging::error("å…¥åŠ›ãƒ‡ãƒ¼ã‚¿ã®å–å¾—ã«å¤±æ•—ã—ã¾ã—ãŸã€‚", "onInput", "Device");
 		return;
 	}
 
@@ -160,12 +160,12 @@ void device::on_input(HWND hwnd, WPARAM wParam, LPARAM lParam)
 	{
 		if (input.header.dwType == RIM_TYPEKEYBOARD)
 		{
-			// ƒL[ƒ{[ƒh‚Ì“ü—ÍƒCƒxƒ“ƒg
+			// ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰ã®å…¥åŠ›ã‚¤ãƒ™ãƒ³ãƒˆ
 			input_keyboard(input);
 		}
 		else if (input.header.dwType == RIM_TYPEMOUSE)
 		{
-			// ƒ}ƒEƒX‚Ì“ü—ÍƒCƒxƒ“ƒg
+			// ãƒã‚¦ã‚¹ã®å…¥åŠ›ã‚¤ãƒ™ãƒ³ãƒˆ
 			input_mouse(input);
 		}
 	}
@@ -195,7 +195,7 @@ void device::input_mouse(RAWINPUT& input)
 {
 	for (auto& state : m_MouseStates)
 	{
-		// ƒfƒoƒCƒXƒnƒ“ƒhƒ‹‚ªˆê’v‚µ‚½ê‡‚Éˆ—
+		// ãƒ‡ãƒã‚¤ã‚¹ãƒãƒ³ãƒ‰ãƒ«ãŒä¸€è‡´ã—ãŸå ´åˆã«å‡¦ç†
 		if (state.device_handle == input.header.hDevice)
 		{
 			static const LONG keyDownMaskTable[] =
@@ -238,7 +238,7 @@ void device::input_keyboard(RAWINPUT& input)
 {
 	for (auto& state : m_KeyboardStates)
 	{
-		// ƒfƒoƒCƒXƒnƒ“ƒhƒ‹‚ªˆê’v‚µ‚½ê‡‚Éˆ—
+		// ãƒ‡ãƒã‚¤ã‚¹ãƒãƒ³ãƒ‰ãƒ«ãŒä¸€è‡´ã—ãŸå ´åˆã«å‡¦ç†
 		if (state.device_handle == input.header.hDevice)
 		{
 			const size_t keyCount = state.keys.size();

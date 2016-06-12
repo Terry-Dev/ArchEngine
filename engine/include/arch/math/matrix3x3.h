@@ -68,13 +68,13 @@ public:
 	{
 	}
 
-	///	<summary>s”‚ğæ“¾‚µ‚Ü‚·B</summary>
+	///	<summary>è¡Œæ•°ã‚’å–å¾—ã—ã¾ã™ã€‚</summary>
 	constexpr size_type rows() const
 	{
 		return 3;
 	}
 
-	///	<summary>—ñ”‚ğæ“¾‚µ‚Ü‚·B</summary>
+	///	<summary>åˆ—æ•°ã‚’å–å¾—ã—ã¾ã™ã€‚</summary>
 	constexpr size_type columns() const
 	{
 		return 3;

@@ -14,6 +14,7 @@
 
 #include "utility/algorithm.h"
 #include "utility/cross_compile.h"
+#include "utility/datetime.h"
 #include "utility/endian.h"
 #include "utility/identity.h"
 #include "utility/singleton.h"

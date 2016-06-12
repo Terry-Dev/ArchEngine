@@ -5,19 +5,19 @@
 
 namespace arch
 {
-/// <summary>UDPƒNƒ‰ƒX</summary>
+/// <summary>UDPã‚¯ãƒ©ã‚¹</summary>
 class udp : public socket
 {
 public:
-	/// <summary>ƒRƒ“ƒXƒgƒ‰ƒNƒ^</summary>
+	/// <summary>ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿</summary>
 	udp();
 
-	/// <summary>ƒRƒ“ƒXƒgƒ‰ƒNƒ^</summary>
-	/// <param name="address">ˆ¶æƒAƒhƒŒƒX ‹ó‚Åƒ|[ƒg‚Ì‚İ‚Ìw’è</param>
-	/// <param name="port">ƒ|[ƒg”Ô†</param>
+	/// <summary>ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿</summary>
+	/// <param name="address">å®›å…ˆã‚¢ãƒ‰ãƒ¬ã‚¹ ç©ºã§ãƒãƒ¼ãƒˆã®ã¿ã®æŒ‡å®š</param>
+	/// <param name="port">ãƒãƒ¼ãƒˆç•ªå·</param>
 	udp(int port, const std::string& address);
 
-	/// <summary>ƒRƒ“ƒXƒgƒ‰ƒNƒ^</summary>
+	/// <summary>ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿</summary>
 	udp(const udp& udp);
 
 	/// <summary></summary>
@@ -29,12 +29,12 @@ public:
 	/// <summary></summary>
 	void close() const override;
 
-	/// <summary>ƒf[ƒ^‚ğ“]‘—‚µ‚Ü‚·B</summary>
-	/// <param name="data">ƒf[ƒ^</param>
+	/// <summary>ãƒ‡ãƒ¼ã‚¿ã‚’è»¢é€ã—ã¾ã™ã€‚</summary>
+	/// <param name="data">ãƒ‡ãƒ¼ã‚¿</param>
 	bool send(const std::string& data) const override;
 
-	/// <summary>ƒf[ƒ^‚ğóM‚µ‚Ü‚·</summary>
-	/// <param name="result">óMƒf[ƒ^</param>
+	/// <summary>ãƒ‡ãƒ¼ã‚¿ã‚’å—ä¿¡ã—ã¾ã™</summary>
+	/// <param name="result">å—ä¿¡ãƒ‡ãƒ¼ã‚¿</param>
 	bool receive(std::string& result) const override;
 
 private:

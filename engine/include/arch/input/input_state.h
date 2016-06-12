@@ -20,9 +20,9 @@ namespace arch
 struct input_state final
 {
 	int32_t identity;	///
-	bool pressed;		/// ƒL[‚ª‰Ÿ‚³‚ê‚Ä‚¢‚é
-	bool released;		/// ƒL[‚ª—£‚³‚ê‚½
-	bool clicked;		/// ƒL[‚ª‰Ÿ‚³‚ê‚½
+	bool pressed;		/// ã‚­ãƒ¼ãŒæŠ¼ã•ã‚Œã¦ã„ã‚‹
+	bool released;		/// ã‚­ãƒ¼ãŒé›¢ã•ã‚ŒãŸ
+	bool clicked;		/// ã‚­ãƒ¼ãŒæŠ¼ã•ã‚ŒãŸ
 };
 
 }

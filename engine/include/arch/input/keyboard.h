@@ -71,30 +71,30 @@ struct keyboard final
 	static input_state key_f11;	///< F11
 	static input_state key_f12;	///< F12
 
-	static input_state key_num_0;		///< ƒeƒ“ƒL[‚Ì0
-	static input_state key_num_1;		///< ƒeƒ“ƒL[‚Ì1
-	static input_state key_num_2;		///< ƒeƒ“ƒL[‚Ì2
-	static input_state key_num_3;		///< ƒeƒ“ƒL[‚Ì3
-	static input_state key_num_4;		///< ƒeƒ“ƒL[‚Ì4
-	static input_state key_num_5;		///< ƒeƒ“ƒL[‚Ì5
-	static input_state key_num_6;		///< ƒeƒ“ƒL[‚Ì6
-	static input_state key_num_7;		///< ƒeƒ“ƒL[‚Ì7
-	static input_state key_num_8;		///< ƒeƒ“ƒL[‚Ì8
-	static input_state key_num_9;		///< ƒeƒ“ƒL[‚Ì9
+	static input_state key_num_0;		///< ãƒ†ãƒ³ã‚­ãƒ¼ã®0
+	static input_state key_num_1;		///< ãƒ†ãƒ³ã‚­ãƒ¼ã®1
+	static input_state key_num_2;		///< ãƒ†ãƒ³ã‚­ãƒ¼ã®2
+	static input_state key_num_3;		///< ãƒ†ãƒ³ã‚­ãƒ¼ã®3
+	static input_state key_num_4;		///< ãƒ†ãƒ³ã‚­ãƒ¼ã®4
+	static input_state key_num_5;		///< ãƒ†ãƒ³ã‚­ãƒ¼ã®5
+	static input_state key_num_6;		///< ãƒ†ãƒ³ã‚­ãƒ¼ã®6
+	static input_state key_num_7;		///< ãƒ†ãƒ³ã‚­ãƒ¼ã®7
+	static input_state key_num_8;		///< ãƒ†ãƒ³ã‚­ãƒ¼ã®8
+	static input_state key_num_9;		///< ãƒ†ãƒ³ã‚­ãƒ¼ã®9
 
-	static input_state key_num_period;		///< ƒeƒ“ƒL[‚Ì.
-	static input_state key_num_divide;		///< ƒeƒ“ƒL[‚Ì/
-	static input_state key_num_multiply;	///< ƒeƒ“ƒL[‚Ì*
-	static input_state key_num_plus;		///< ƒeƒ“ƒL[‚Ì+
-	static input_state key_num_minus;		///< ƒeƒ“ƒL[‚Ì-
-	static input_state key_num_enter;		///< ƒeƒ“ƒL[‚ÌEnter
+	static input_state key_num_period;		///< ãƒ†ãƒ³ã‚­ãƒ¼ã®.
+	static input_state key_num_divide;		///< ãƒ†ãƒ³ã‚­ãƒ¼ã®/
+	static input_state key_num_multiply;	///< ãƒ†ãƒ³ã‚­ãƒ¼ã®*
+	static input_state key_num_plus;		///< ãƒ†ãƒ³ã‚­ãƒ¼ã®+
+	static input_state key_num_minus;		///< ãƒ†ãƒ³ã‚­ãƒ¼ã®-
+	static input_state key_num_enter;		///< ãƒ†ãƒ³ã‚­ãƒ¼ã®Enter
 
 	static input_state key_escape;	///< Esc
 
-	static input_state key_up;		///< ã
-	static input_state key_down;	///< ‰º
-	static input_state key_left;	///< ¶
-	static input_state key_right;	///< ‰E
+	static input_state key_up;		///< ä¸Š
+	static input_state key_down;	///< ä¸‹
+	static input_state key_left;	///< å·¦
+	static input_state key_right;	///< å³
 
 	static input_state key_minus;		///< -
 	static input_state key_equals;		///< =
@@ -109,15 +109,15 @@ struct keyboard final
 
 	static input_state key_left_bracket;	///< [
 	static input_state key_right_bracket;	///< ]
-	static input_state key_left_control;	///< ¶Ctrl
-	static input_state key_right_control;	///< ‰ECtrl
-	static input_state key_left_shift;		///< ¶Shift
-	static input_state key_right_shift;		///< ‰EShift
-	static input_state key_left_alt;		///< ¶Alt
-	static input_state key_right_alt;		///< ‰EAlt
+	static input_state key_left_control;	///< å·¦Ctrl
+	static input_state key_right_control;	///< å³Ctrl
+	static input_state key_left_shift;		///< å·¦Shift
+	static input_state key_right_shift;		///< å³Shift
+	static input_state key_left_alt;		///< å·¦Alt
+	static input_state key_right_alt;		///< å³Alt
 
 	static input_state key_slash;			///< /
-	static input_state key_backslash;		///< _
+	static input_state key_backslash;		///< ï¼¼
 
 	static input_state key_comma;			///< ,
 	static input_state key_period;			///< .

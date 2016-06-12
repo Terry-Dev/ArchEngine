@@ -25,14 +25,14 @@ bool device::initialize(HINSTANCE hInstance)
 
 	HRESULT hr;
 
-	// DirectInputƒCƒ“ƒ^[ƒtƒF[ƒX‚Ìì¬
+	// DirectInputã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã®ä½œæˆ
 	hr = CoCreateInstance
 		(
-		CLSID_DirectInput8,						// DirectInput‚ÌCLSID
+		CLSID_DirectInput8,						// DirectInputã®CLSID
 		NULL,									//
-		CLSCTX_ALL,								// CLSCTX(ƒRƒ“ƒeƒLƒXƒg)
-		IID_IDirectInput8,						// DirectInput‚ÌGUID
-		reinterpret_cast<void**>(&m_pInput)		// ƒCƒ“ƒ^[ƒtƒFƒCƒX‚Ìƒ|ƒCƒ“ƒ^
+		CLSCTX_ALL,								// CLSCTX(ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆ)
+		IID_IDirectInput8,						// DirectInputã®GUID
+		reinterpret_cast<void**>(&m_pInput)		// ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®ãƒã‚¤ãƒ³ã‚¿
 		);
 
 	if FAILED(hr)
@@ -40,7 +40,7 @@ bool device::initialize(HINSTANCE hInstance)
 		return false;
 	}
 
-	// DirectInput‚Ì‰Šú‰»
+	// DirectInputã®åˆæœŸåŒ–
 	if FAILED(m_pInput->Initialize(GetModuleHandle(NULL), DIRECTINPUT_VERSION))
 	{
 		m_pInput->Release();
@@ -122,9 +122,9 @@ void device::enumerate_devices()
 {
 	clear_devices();
 
-	m_pInput->EnumDevices(DI8DEVCLASS_POINTER, enumerate_mouses_callback, this, DIEDFL_ATTACHEDONLY);		// ƒ}ƒEƒX‚Ì—ñ‹“
-	m_pInput->EnumDevices(DI8DEVCLASS_KEYBOARD, enumerate_keyboards_callback, this, DIEDFL_ATTACHEDONLY);	// ƒL[ƒ{[ƒh‚Ì—ñ‹“
-	m_pInput->EnumDevices(DI8DEVCLASS_GAMECTRL, enumerate_joysticks_callback, this, DIEDFL_ATTACHEDONLY);	// ƒQ[ƒ€ƒpƒbƒh‚Ì—ñ‹“
+	m_pInput->EnumDevices(DI8DEVCLASS_POINTER, enumerate_mouses_callback, this, DIEDFL_ATTACHEDONLY);		// ãƒã‚¦ã‚¹ã®åˆ—æŒ™
+	m_pInput->EnumDevices(DI8DEVCLASS_KEYBOARD, enumerate_keyboards_callback, this, DIEDFL_ATTACHEDONLY);	// ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰ã®åˆ—æŒ™
+	m_pInput->EnumDevices(DI8DEVCLASS_GAMECTRL, enumerate_joysticks_callback, this, DIEDFL_ATTACHEDONLY);	// ã‚²ãƒ¼ãƒ ãƒ‘ãƒƒãƒ‰ã®åˆ—æŒ™
 }
 
 void device::set_focus(HWND hwnd)
@@ -238,7 +238,7 @@ IDirectInputDevice8* device::create_device(const GUID Guid)
 	IDirectInputDevice8* pDevice;
 	if FAILED(m_pInput->CreateDevice(Guid, &pDevice, NULL))
 	{
-		logging::error("IDirectInputDevice8‚Ì¶¬‚É¸”s‚µ‚Ü‚µ‚½B", "createDevice", "Device");
+		logging::error("IDirectInputDevice8ã®ç”Ÿæˆã«å¤±æ•—ã—ã¾ã—ãŸã€‚", "createDevice", "Device");
 		return nullptr;
 	}
 	return pDevice;
@@ -248,17 +248,17 @@ void device::update_mouse(mouse_state& state)
 {
 	DIMOUSESTATE2 mouseState = {0};
 
-	// ƒ}ƒEƒX‚Ì“ü—Íó‘Ô‚ğæ“¾
+	// ãƒã‚¦ã‚¹ã®å…¥åŠ›çŠ¶æ…‹ã‚’å–å¾—
 	if FAILED(state.handle->GetDeviceState(sizeof(DIMOUSESTATE2), &mouseState))
 	{
-		// ƒfƒoƒCƒX‚ªƒƒXƒg‚µ‚Ä‚¢‚éê‡‚ÍƒfƒoƒCƒX‚ğÄæ“¾
+		// ãƒ‡ãƒã‚¤ã‚¹ãŒãƒ­ã‚¹ãƒˆã—ã¦ã„ã‚‹å ´åˆã¯ãƒ‡ãƒã‚¤ã‚¹ã‚’å†å–å¾—
 		if FAILED(state.handle->Acquire())
 		{
-			// ƒƒXƒg‚µ‚½ƒfƒoƒCƒX‚ğæ“¾‚Å‚«‚È‚©‚Á‚½ê‡
+			// ãƒ­ã‚¹ãƒˆã—ãŸãƒ‡ãƒã‚¤ã‚¹ã‚’å–å¾—ã§ããªã‹ã£ãŸå ´åˆ
 		}
 		else if FAILED(state.handle->GetDeviceState(sizeof(DIMOUSESTATE2), &mouseState))
 		{
-			// ƒfƒoƒCƒX‚ğæ“¾‚Å‚«‚½‚ªƒ}ƒEƒX‚Ì“ü—Íó‘Ô‚ğÄæ“¾‚Å‚«‚È‚©‚Á‚½ê‡
+			// ãƒ‡ãƒã‚¤ã‚¹ã‚’å–å¾—ã§ããŸãŒãƒã‚¦ã‚¹ã®å…¥åŠ›çŠ¶æ…‹ã‚’å†å–å¾—ã§ããªã‹ã£ãŸå ´åˆ
 		}
 	}
 
@@ -281,17 +281,17 @@ void device::update_keyboard(keyboard_state& state)
 	std::array<BYTE, 256> keyState = {0};
 	const size_t size = keyState.size();
 
-	// ƒL[ƒ{[ƒh‚Ì“ü—Íó‘Ô‚ğæ“¾
+	// ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰ã®å…¥åŠ›çŠ¶æ…‹ã‚’å–å¾—
 	if FAILED(state.handle->GetDeviceState(size, &keyState))
 	{
-		// ƒfƒoƒCƒX‚ªƒƒXƒg‚µ‚Ä‚¢‚éê‡‚ÍƒfƒoƒCƒX‚ğÄæ“¾
+		// ãƒ‡ãƒã‚¤ã‚¹ãŒãƒ­ã‚¹ãƒˆã—ã¦ã„ã‚‹å ´åˆã¯ãƒ‡ãƒã‚¤ã‚¹ã‚’å†å–å¾—
 		if FAILED(state.handle->Acquire())
 		{
-			// ƒƒXƒg‚µ‚½ƒfƒoƒCƒX‚ğæ“¾‚Å‚«‚È‚©‚Á‚½ê‡
+			// ãƒ­ã‚¹ãƒˆã—ãŸãƒ‡ãƒã‚¤ã‚¹ã‚’å–å¾—ã§ããªã‹ã£ãŸå ´åˆ
 		}
 		else if FAILED(state.handle->GetDeviceState(size, &keyState))
 		{
-			// ƒfƒoƒCƒX‚ğæ“¾‚Å‚«‚½‚ªƒL[ƒ{[ƒh‚Ì“ü—Íó‘Ô‚ğÄæ“¾‚Å‚«‚È‚©‚Á‚½ê‡
+			// ãƒ‡ãƒã‚¤ã‚¹ã‚’å–å¾—ã§ããŸãŒã‚­ãƒ¼ãƒœãƒ¼ãƒ‰ã®å…¥åŠ›çŠ¶æ…‹ã‚’å†å–å¾—ã§ããªã‹ã£ãŸå ´åˆ
 		}
 	}
 
@@ -319,7 +319,7 @@ std::string device::guid_to_device_name(const GUID Guid)
 	Info.cbSize = sizeof(SP_INTERFACE_DEVICE_DATA);
 	if (SetupDiEnumDeviceInterfaces(hDevInfo, 0, &Guid, 0, &Info))
 	{
-		//ƒfƒoƒCƒXƒCƒ“ƒ^[ƒtƒF[ƒXÚ×‚ğæ“¾‚·‚é‚½‚ß‚É•K—v‚Èƒƒ‚ƒŠƒTƒCƒY‚ğæ“¾‚·‚é
+		//ãƒ‡ãƒã‚¤ã‚¹ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹è©³ç´°ã‚’å–å¾—ã™ã‚‹ãŸã‚ã«å¿…è¦ãªãƒ¡ãƒ¢ãƒªã‚µã‚¤ã‚ºã‚’å–å¾—ã™ã‚‹
 		DWORD Size;
 		SetupDiGetDeviceInterfaceDetail(hDevInfo, &Info, NULL, 0, &Size, NULL);
 

@@ -12,8 +12,9 @@
 
 #pragma once
 
-#include "input/input_state.h"
-#include "input/keyboard.h"
-#include "input/mouse.h"
-#include "input/pen.h"
-#include "input/touch.h"
+#include "io/binary.h"
+#include "io/csv.h"
+#include "io/filesystem.h"
+#include "io/json.h"
+#include "io/text.h"
+#include "io/types.h"

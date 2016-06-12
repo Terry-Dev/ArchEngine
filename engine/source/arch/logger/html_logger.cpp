@@ -29,7 +29,7 @@ html_logger::html_logger(const std::string& _path)
 	writer.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
 	writer.write("<title>ArchEngine Log</title>\n");
 	writer.write("<style>\n");
-	writer.write("body\n{\nbackground-color:#818181;\nfont-family:\"ƒƒCƒŠƒI\", \"ƒqƒ‰ƒMƒmŠpƒS Pro W3\", \"‚l‚r ‚oƒSƒVƒbƒN\";\n}\n");
+	writer.write("body\n{\nbackground-color:#818181;\nfont-family:\"ãƒ¡ã‚¤ãƒªã‚ª\", \"ãƒ’ãƒ©ã‚®ãƒè§’ã‚´ Pro W3\", \"ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯\";\n}\n");
 	writer.write("h1\n{\nfont-size:26px;\ncolor:#ffffcc;\n}\n");
 	writer.write("div\n{\nfont-size:12px;\nwidth:80px;\nfloat:left;\ntext-align:center;\nmargin:0px 18px 0px 18px;\npadding:6px 8px 6px 8px;\n}\n");
 	writer.write("div.header\n{\nfont-size:26px;\ncolor:#ffffcc;\nwidth:auto;\nfloat:none;\ntext-align:center;\n}\n");

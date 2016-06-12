@@ -67,7 +67,7 @@ bool device::initialize()
 	m_WintabDLL = win32::module("Wintab32.dll");
 	if (!m_WintabDLL)
 	{
-		logging::infomation("Wintab32.dll‚ğ“Ç‚İ‚ß‚Ü‚¹‚ñ‚Å‚µ‚½B");
+		logging::infomation("Wintab32.dllã‚’èª­ã¿è¾¼ã‚ã¾ã›ã‚“ã§ã—ãŸã€‚");
 		return false;
 	}
 
@@ -92,13 +92,13 @@ bool device::initialize()
 	m_WTMgrDefContextFunction = m_WintabDLL.function<WTMgrDefContextFuncPtr>("WTMgrDefContext");
 	m_WTMgrDefContextExFunction = m_WintabDLL.function<WTMgrDefContextExFuncPtr>("WTMgrDefContextEx");
 
-	// Wintab‚ª—˜—p‰Â”\‚©’²‚×‚é
+	// WintabãŒåˆ©ç”¨å¯èƒ½ã‹èª¿ã¹ã‚‹
 	if (!m_WTInfoFunction(0, 0, NULL))
 	{
 		return false;
 	}
 
-	// Wintab‚Ìƒo[ƒWƒ‡ƒ“‚ğ’²‚×‚é
+	// Wintabã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã‚’èª¿ã¹ã‚‹
 	ushort version;
 	m_WTInfoFunction(WTI_INTERFACE, IFC_SPECVERSION, &version);
 	m_WintabVersion = static_cast<uint>(version);
@@ -151,57 +151,57 @@ void device::finalize()
 void device::reset()
 {
 	/*
-	// —˜—p‰Â”\‚ÈWacom‚ÌƒfƒoƒCƒX‚ğ’²‚×‚é
+	// åˆ©ç”¨å¯èƒ½ãªWacomã®ãƒ‡ãƒã‚¤ã‚¹ã‚’èª¿ã¹ã‚‹
 	String name;
 	name.resize(50);
     m_WTInfoWFunction(WTI_deviceS, DVC_NAME, name.data());
 	if (name != "WACOM")
 	{
-		// Wacom‚Ìƒ^ƒuƒŒƒbƒg‚ª‚È‚¢ê‡
+		// Wacomã®ã‚¿ãƒ–ãƒ¬ãƒƒãƒˆãŒãªã„å ´åˆ
     }
 	*/
 
-	// X•ûŒü‚ÉŠÖ‚·‚éî•ñ‚ğæ“¾
+	// Xæ–¹å‘ã«é–¢ã™ã‚‹æƒ…å ±ã‚’å–å¾—
 	AXIS x;
 	m_WTInfoFunction(WTI_DEVICES, DVC_X, &x);
 	m_Position.x = 0;
-	m_MaxPosition.x = x.axMax;								// X•ûŒü‚ÌÅ‘åÀ•W
-	m_MinPosition.x = x.axMin;								// X•ûŒü‚ÌÅ¬À•W
-	m_PositionResolution.x = FIX_DOUBLE(x.axResolution);	// X•ûŒü‚Ì•ª‰ğ”\‚Ì®”•”[line/inch]
+	m_MaxPosition.x = x.axMax;								// Xæ–¹å‘ã®æœ€å¤§åº§æ¨™
+	m_MinPosition.x = x.axMin;								// Xæ–¹å‘ã®æœ€å°åº§æ¨™
+	m_PositionResolution.x = FIX_DOUBLE(x.axResolution);	// Xæ–¹å‘ã®åˆ†è§£èƒ½ã®æ•´æ•°éƒ¨[line/inch]
 
-	// Y•ûŒü‚ÉŠÖ‚·‚éî•ñ‚ğæ“¾
+	// Yæ–¹å‘ã«é–¢ã™ã‚‹æƒ…å ±ã‚’å–å¾—
 	AXIS y;
 	m_WTInfoFunction(WTI_DEVICES, DVC_Y, &y);
 	m_Position.y = 0;
-	m_MaxPosition.y = y.axMax;								// Y•ûŒü‚ÌÅ‘åÀ•W
-	m_MinPosition.y = y.axMin;								// Y•ûŒü‚ÌÅ¬À•W
-	m_PositionResolution.y = FIX_DOUBLE(y.axResolution);	// Y•ûŒü‚Ì•ª‰ğ”\‚Ì®”•”[line/inch]
+	m_MaxPosition.y = y.axMax;								// Yæ–¹å‘ã®æœ€å¤§åº§æ¨™
+	m_MinPosition.y = y.axMin;								// Yæ–¹å‘ã®æœ€å°åº§æ¨™
+	m_PositionResolution.y = FIX_DOUBLE(y.axResolution);	// Yæ–¹å‘ã®åˆ†è§£èƒ½ã®æ•´æ•°éƒ¨[line/inch]
 
-	// •Mˆ³‚ÉŠÖ‚·‚éî•ñ‚ğæ“¾
+	// ç­†åœ§ã«é–¢ã™ã‚‹æƒ…å ±ã‚’å–å¾—
 	AXIS pressure = {0};
 	m_SupportsPressure = m_WTInfoFunction(WTI_DEVICES, DVC_NPRESSURE, &pressure) != 0;
 	m_Pressure = 0.0;
-	m_PressureInfo.max = pressure.axMax;							// Å‘å•Mˆ³
-	m_PressureInfo.min = pressure.axMin;							// Å¬•Mˆ³
-	m_PressureInfo.resolution = FIX_DOUBLE(pressure.axResolution);	// •Mˆ³‚Ì‰ğ‘œ“x
+	m_PressureInfo.max = pressure.axMax;							// æœ€å¤§ç­†åœ§
+	m_PressureInfo.min = pressure.axMin;							// æœ€å°ç­†åœ§
+	m_PressureInfo.resolution = FIX_DOUBLE(pressure.axResolution);	// ç­†åœ§ã®è§£åƒåº¦
 
-	// ŒX‚«‚ÉŠÖ‚·‚éî•ñ‚ğæ“¾
+	// å‚¾ãã«é–¢ã™ã‚‹æƒ…å ±ã‚’å–å¾—
 	AXIS tilt[3] = {0};
 	m_SupportsTilt = m_WTInfoFunction(WTI_DEVICES, DVC_ORIENTATION, tilt) != 0;
 	if (m_SupportsTilt)
 	{
-		// ƒ^ƒuƒŒƒbƒg‚ª•ûˆÊŠp‚ÆŒX‚«Šp‚ğƒTƒ|[ƒg‚µ‚Ä‚¢‚é‚© 
+		// ã‚¿ãƒ–ãƒ¬ãƒƒãƒˆãŒæ–¹ä½è§’ã¨å‚¾ãè§’ã‚’ã‚µãƒãƒ¼ãƒˆã—ã¦ã„ã‚‹ã‹ 
 		m_SupportsTilt = tilt[0].axResolution && tilt[1].axResolution;
 	}
 	m_AzimuthRadian = 0.0;
-	m_AzimuthInfo.max = tilt[0].axMax;								// Å‘å•ûˆÊŠp
-	m_AzimuthInfo.min = tilt[0].axMin;								// Å¬•ûˆÊŠp
-	m_AzimuthInfo.resolution = FIX_DOUBLE(tilt[0].axResolution);	// •ûˆÊŠp‚Ì‰ğ‘œ“x
+	m_AzimuthInfo.max = tilt[0].axMax;								// æœ€å¤§æ–¹ä½è§’
+	m_AzimuthInfo.min = tilt[0].axMin;								// æœ€å°æ–¹ä½è§’
+	m_AzimuthInfo.resolution = FIX_DOUBLE(tilt[0].axResolution);	// æ–¹ä½è§’ã®è§£åƒåº¦
 
 	m_AltitudeRadian = 0.0;
-	m_AltitudeInfo.max = tilt[0].axMax;								// Å‘å‚‚³
-	m_AltitudeInfo.min = tilt[0].axMin;								// Å¬‚‚³
-	m_AltitudeInfo.resolution = FIX_DOUBLE(tilt[1].axResolution);	// ‚‚³‚Ì‰ğ‘œ“x
+	m_AltitudeInfo.max = tilt[0].axMax;								// æœ€å¤§é«˜ã•
+	m_AltitudeInfo.min = tilt[0].axMin;								// æœ€å°é«˜ã•
+	m_AltitudeInfo.resolution = FIX_DOUBLE(tilt[1].axResolution);	// é«˜ã•ã®è§£åƒåº¦
 
 	m_IsEraser = false;
 }
@@ -226,17 +226,17 @@ bool device::registerWindow(HWND hwnd)
 	context.lcMoveMask = PACKETDATA;
 	context.lcBtnUpMask = context.lcBtnDnMask;
 
-	// ƒXƒP[ƒŠƒ“ƒO‚Ì‰Šú‰»‚ğs‚¤
-	context.lcInOrgX = 0;										// ƒ^ƒuƒŒƒbƒg‚Ì“ü—Í‚ÌŠJnXÀ•W
-	context.lcInOrgY = 0;										// ƒ^ƒuƒŒƒbƒg‚Ì“ü—Í‚ÌŠJnYÀ•W
-	context.lcInExtX = m_MaxPosition.x;							// ƒ^ƒuƒŒƒbƒg‚Ì“ü—Í‚ÌÅ‘åXÀ•W
-	context.lcInExtY = m_MaxPosition.y;							// ƒ^ƒuƒŒƒbƒg‚Ì“ü—Í‚ÌÅ‘åYÀ•W
-	context.lcOutOrgX = GetSystemMetrics(SM_XVIRTUALSCREEN);	// ƒRƒ“ƒeƒLƒXƒg‚Ìo—Í‚ÌŠJnXÀ•W
-	context.lcOutOrgY = GetSystemMetrics(SM_YVIRTUALSCREEN);	// ƒRƒ“ƒeƒLƒXƒg‚Ìo—Í‚ÌŠJnYÀ•W
-	context.lcOutExtX = GetSystemMetrics(SM_CXVIRTUALSCREEN);	// ƒRƒ“ƒeƒLƒXƒg‚Ìo—Í‚ÌÅ‘åXÀ•W
-	context.lcOutExtY = -GetSystemMetrics(SM_CYVIRTUALSCREEN);	// ƒRƒ“ƒeƒLƒXƒg‚Ìo—Í‚ÌÅ‘åYÀ•W
+	// ã‚¹ã‚±ãƒ¼ãƒªãƒ³ã‚°ã®åˆæœŸåŒ–ã‚’è¡Œã†
+	context.lcInOrgX = 0;										// ã‚¿ãƒ–ãƒ¬ãƒƒãƒˆã®å…¥åŠ›æ™‚ã®é–‹å§‹Xåº§æ¨™
+	context.lcInOrgY = 0;										// ã‚¿ãƒ–ãƒ¬ãƒƒãƒˆã®å…¥åŠ›æ™‚ã®é–‹å§‹Yåº§æ¨™
+	context.lcInExtX = m_MaxPosition.x;							// ã‚¿ãƒ–ãƒ¬ãƒƒãƒˆã®å…¥åŠ›æ™‚ã®æœ€å¤§Xåº§æ¨™
+	context.lcInExtY = m_MaxPosition.y;							// ã‚¿ãƒ–ãƒ¬ãƒƒãƒˆã®å…¥åŠ›æ™‚ã®æœ€å¤§Yåº§æ¨™
+	context.lcOutOrgX = GetSystemMetrics(SM_XVIRTUALSCREEN);	// ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆã®å‡ºåŠ›æ™‚ã®é–‹å§‹Xåº§æ¨™
+	context.lcOutOrgY = GetSystemMetrics(SM_YVIRTUALSCREEN);	// ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆã®å‡ºåŠ›æ™‚ã®é–‹å§‹Yåº§æ¨™
+	context.lcOutExtX = GetSystemMetrics(SM_CXVIRTUALSCREEN);	// ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆã®å‡ºåŠ›æ™‚ã®æœ€å¤§Xåº§æ¨™
+	context.lcOutExtY = -GetSystemMetrics(SM_CYVIRTUALSCREEN);	// ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆã®å‡ºåŠ›æ™‚ã®æœ€å¤§Yåº§æ¨™
 
-	// ƒRƒ“ƒeƒLƒXƒg‚ğì¬
+	// ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆã‚’ä½œæˆ
 	handle.windowHandle = hwnd;
 	handle.contextHandle = m_WTOpenFunction(hwnd, &context, TRUE);
 	if (handle.contextHandle == NULL)
@@ -244,7 +244,7 @@ bool device::registerWindow(HWND hwnd)
 		return false;
 	}
 
-	// ƒnƒ“ƒhƒ‹‚É’Ç‰Á
+	// ãƒãƒ³ãƒ‰ãƒ«ã«è¿½åŠ 
 	m_Handles.push_back(std::move(handle));
 
 	return true;
@@ -366,7 +366,7 @@ void device::onPacket(HWND hwnd, WPARAM wParam, LPARAM lParam)
 		bool down = false;
 		switch (state)
 		{
-		// •Ï‰»‚È‚µ
+		// å¤‰åŒ–ãªã—
 		case TBN_NONE:
 			down = m_Keys[index].pressed;
 			break;
@@ -394,7 +394,7 @@ void device::onPacket(HWND hwnd, WPARAM wParam, LPARAM lParam)
 			m_AltitudeRadian = PiDivTwo * static_cast<double>(abs(packet.pkOrientation.orAltitude) - m_AltitudeInfo.min) / static_cast<double>(m_AltitudeInfo.max - m_AltitudeInfo.min);
 		}
 
-		// TPS_INVERT‚Ìƒrƒbƒg‚ª—§‚Á‚Ä‚¢‚éê‡‚ÍŒü‚«‚ªÁ‚µƒSƒ€‘¤‚É‚È‚Á‚Ä‚¢‚é
+		// TPS_INVERTã®ãƒ“ãƒƒãƒˆãŒç«‹ã£ã¦ã„ã‚‹å ´åˆã¯å‘ããŒæ¶ˆã—ã‚´ãƒ å´ã«ãªã£ã¦ã„ã‚‹
 		m_IsEraser = (packet.pkStatus & TPS_INVERT) == TPS_INVERT;
 	}
 }

@@ -19,7 +19,7 @@ namespace arch
 {
 
 ///	<summary>
-///	ansi�����R�[�h�ւ̕ϊ�
+///	ansi文字コードへの変換
 ///	</summary>
 class codecvt_ansi
 {
@@ -33,7 +33,7 @@ public:
 };
 
 ///	<summary>
-///	UTF-8�����R�[�h�ւ̕ϊ�
+///	UTF-8文字コードへの変換
 ///	</summary>
 class codecvt_utf8
 {
@@ -47,7 +47,7 @@ public:
 };
 
 ///	<summary>
-///	UTF-16LE�����R�[�h�ւ̕ϊ�
+///	UTF-16LE文字コードへの変換
 ///	</summary>
 class codecvt_utf16le
 {
@@ -61,7 +61,7 @@ public:
 };
 
 ///	<summary>
-///	UTF-16BE�����R�[�h�ւ̕ϊ�
+///	UTF-16BE文字コードへの変換
 ///	</summary>
 class codecvt_utf16be
 {
@@ -75,7 +75,7 @@ public:
 };
 /*
 ///	<summary>
-///	UTF-32LE�����R�[�h�ւ̕ϊ�
+///	UTF-32LE文字コードへの変換
 ///	</summary>
 class codecvt_utf32le
 {
@@ -89,7 +89,7 @@ public:
 };
 
 ///	<summary>
-///	UTF-32BE�����R�[�h�ւ̕ϊ�
+///	UTF-32BE文字コードへの変換
 ///	</summary>
 class codecvt_utf32be
 {

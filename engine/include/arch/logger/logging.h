@@ -14,7 +14,6 @@
 
 #include <string>
 #include <memory>
-#include "types.h"
 
 namespace arch
 {

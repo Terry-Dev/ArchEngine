@@ -18,7 +18,7 @@ namespace arch
 {
 
 /*!
-*	@brief 4元数(クォータニオン)を表します。
+*	@brief 4蜈�謨ｰ(繧ｯ繧ｩ繝ｼ繧ｿ繝九が繝ｳ)繧定｡ｨ縺励∪縺吶�
 */
 template <typename value_type>
 class quaternion

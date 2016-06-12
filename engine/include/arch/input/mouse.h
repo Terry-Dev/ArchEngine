@@ -20,17 +20,17 @@ namespace arch
 
 struct mouse final
 {
-	static input_state left;		///< 左ボタン
-	static input_state right;		///< 右ボタン
-	static input_state middle;		///< 中央ボタン
-	static input_state button1;		///< ボタン 1
-	static input_state button2;		///< ボタン 2
-	static input_state button3;		///< ボタン 3
-	static input_state button4;		///< ボタン 4
-	static input_state button5;		///< ボタン 5
-	static input_state button6;		///< ボタン 6
-	static input_state button7;		///< ボタン 7
-	static input_state button8;		///< ボタン 8
+	static input_state left;		///< 蟾ｦ繝懊ち繝ｳ
+	static input_state right;		///< 蜿ｳ繝懊ち繝ｳ
+	static input_state middle;		///< 荳ｭ螟ｮ繝懊ち繝ｳ
+	static input_state button1;		///< 繝懊ち繝ｳ 1
+	static input_state button2;		///< 繝懊ち繝ｳ 2
+	static input_state button3;		///< 繝懊ち繝ｳ 3
+	static input_state button4;		///< 繝懊ち繝ｳ 4
+	static input_state button5;		///< 繝懊ち繝ｳ 5
+	static input_state button6;		///< 繝懊ち繝ｳ 6
+	static input_state button7;		///< 繝懊ち繝ｳ 7
+	static input_state button8;		///< 繝懊ち繝ｳ 8
 
 	static int2 position;
 	static int3 move;

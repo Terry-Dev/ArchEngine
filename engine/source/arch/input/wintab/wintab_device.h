@@ -27,9 +27,9 @@ namespace wintab
 
 struct info
 {
-	int max;			// Å‘å’l
-	int min;			// Å¬’l
-	double resolution;	// ‰ğ‘œ“x
+	int max;			// æœ€å¤§å€¤
+	int min;			// æœ€å°å€¤
+	double resolution;	// è§£åƒåº¦
 };
 
 class device final
@@ -103,21 +103,21 @@ private:
 private:
 	bool					m_HasInitialized;
 	bool					m_SupportsWintab;
-	bool					m_SupportsPressure;		// •Mˆ³‚É‘Î‰‚µ‚Ä‚¢‚é
-	bool					m_SupportsTilt;			// ŒX‚«‚É‘Î‰‚µ‚Ä‚¢‚é
-	bool					m_IsEraser;				// Á‚µƒSƒ€‘¤‚Å‚ ‚é
+	bool					m_SupportsPressure;		// ç­†åœ§ã«å¯¾å¿œã—ã¦ã„ã‚‹
+	bool					m_SupportsTilt;			// å‚¾ãã«å¯¾å¿œã—ã¦ã„ã‚‹
+	bool					m_IsEraser;				// æ¶ˆã—ã‚´ãƒ å´ã§ã‚ã‚‹
 
-	int						m_WintabVersion;		// Wintab‚Ìƒo[ƒWƒ‡ƒ“
-	int2					m_Position;				// ƒ^ƒuƒŒƒbƒgã‚ÌˆÊ’u
-	int2					m_MaxPosition;			// ƒ^ƒuƒŒƒbƒgã‚ÌÅ‘åÀ•W
-	int2					m_MinPosition;			// ƒ^ƒuƒŒƒbƒgã‚ÌÅ¬À•W
-	double2					m_PositionResolution;	// ƒ^ƒuƒŒƒbƒgã‚Ì‰ğ‘œ“x
-	double					m_Pressure;				// ƒ^ƒuƒŒƒbƒgã‚Ì•Mˆ³(0-1)
-	info					m_PressureInfo;			// ƒ^ƒuƒŒƒbƒgã‚Ì•Mˆ³î•ñ
-	double					m_AzimuthRadian;		// ƒ^ƒuƒŒƒbƒgã‚Ì•ûˆÊŠp(ƒ^ƒuƒŒƒbƒg‚Ì•½–Êã‚É“Š‰e‚µ‚½‚Ìƒyƒ“‚ÌŠp“x)(0-2ƒÎ)
-	info					m_AzimuthInfo;			// ƒ^ƒuƒŒƒbƒgã‚Ì•ûˆÊŠpî•ñ
-	double					m_AltitudeRadian;		// ƒ^ƒuƒŒƒbƒgã‚Ì‚‚³(ƒ^ƒuƒŒƒbƒg‚Ì•½–Ê‚É‚’¼‚ÈŠp“x)(0-ƒÎ/2)
-	info					m_AltitudeInfo;			// ƒ^ƒuƒŒƒbƒgã‚Ì‚‚³î•ñ
+	int						m_WintabVersion;		// Wintabã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³
+	int2					m_Position;				// ã‚¿ãƒ–ãƒ¬ãƒƒãƒˆä¸Šã®ä½ç½®
+	int2					m_MaxPosition;			// ã‚¿ãƒ–ãƒ¬ãƒƒãƒˆä¸Šã®æœ€å¤§åº§æ¨™
+	int2					m_MinPosition;			// ã‚¿ãƒ–ãƒ¬ãƒƒãƒˆä¸Šã®æœ€å°åº§æ¨™
+	double2					m_PositionResolution;	// ã‚¿ãƒ–ãƒ¬ãƒƒãƒˆä¸Šã®è§£åƒåº¦
+	double					m_Pressure;				// ã‚¿ãƒ–ãƒ¬ãƒƒãƒˆä¸Šã®ç­†åœ§(0-1)
+	info					m_PressureInfo;			// ã‚¿ãƒ–ãƒ¬ãƒƒãƒˆä¸Šã®ç­†åœ§æƒ…å ±
+	double					m_AzimuthRadian;		// ã‚¿ãƒ–ãƒ¬ãƒƒãƒˆä¸Šã®æ–¹ä½è§’(ã‚¿ãƒ–ãƒ¬ãƒƒãƒˆã®å¹³é¢ä¸Šã«æŠ•å½±ã—ãŸæ™‚ã®ãƒšãƒ³ã®è§’åº¦)(0-2Ï€)
+	info					m_AzimuthInfo;			// ã‚¿ãƒ–ãƒ¬ãƒƒãƒˆä¸Šã®æ–¹ä½è§’æƒ…å ±
+	double					m_AltitudeRadian;		// ã‚¿ãƒ–ãƒ¬ãƒƒãƒˆä¸Šã®é«˜ã•(ã‚¿ãƒ–ãƒ¬ãƒƒãƒˆã®å¹³é¢ã«å‚ç›´ãªè§’åº¦)(0-Ï€/2)
+	info					m_AltitudeInfo;			// ã‚¿ãƒ–ãƒ¬ãƒƒãƒˆä¸Šã®é«˜ã•æƒ…å ±
 
 	std::array<input_state, 8>	m_Keys;
 	std::vector<Handle>			m_Handles;

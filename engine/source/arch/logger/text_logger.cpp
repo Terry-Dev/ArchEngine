@@ -11,16 +11,15 @@
 //=================================================================================//
 
 #include <vector>
-#include "arch/types.h"
-#include "arch/date_time.h"
-#include "arch/text_logger.h"
+#include <arch/utility.h>
+#include <arch/logger/text_logger.h>
 
 using namespace arch;
 
 text_logger::text_logger(const std::string& _path)
 : logger()
 {
-	writer = text_writer(_path, open_mode::truncate, text_encoding::utf8);
+	writer = text::writer(_path, open_mode::truncate, text_encoding::utf8);
 	if (!writer)
 	{
 		return;
@@ -46,7 +45,7 @@ void text_logger::write(const std::string& message, trace_level level)
 	{
 		return;
 	}
-	auto date = date_time::now();
+	auto date = datetime::now();
 
 	switch (level)
 	{

@@ -253,7 +253,7 @@ bool basic_network::impl::m_listen(int back_log)
 	logging::error("::network::basic_network : Listen error");
 	return false;
 }
-bool basic_network::impl::send_socket(const void* data, uint length)
+bool basic_network::impl::send_socket(const void* data, size_t length)
 {
 	int result = 0;
 	switch (this->m_address.ai_socktype)
@@ -276,7 +276,7 @@ bool basic_network::impl::send_socket(const void* data, uint length)
 void basic_network::impl::set_non_blocking(bool flag)
 {
 	u_long val = (flag ? 1 : 0);
-	logging::debug("::network::basic_network : Change Non Blocking flag : " + convert::to_string(flag));
+	logging::debug("::network::basic_network : Change Non Blocking flag : " + std::to_string(flag));
 	ioctlsocket(m_main_sock, FIONBIO, &val);
 }
 int basic_network::impl::receive(void* out, int length)
@@ -287,7 +287,7 @@ int basic_network::impl::receive(void* out, int length)
 	if (outlen > 0 && outlen != SOCKET_ERROR)
 	{
 		out = result;
-		logging::debug("::network::basic_network : Recive data. : " + convert::to_string(outlen));
+		logging::debug("::network::basic_network : Recive data. : " + std::to_string(outlen));
 		return outlen;
 	}
 	else if (outlen == 0)

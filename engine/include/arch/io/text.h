@@ -13,63 +13,66 @@
 #pragma once
 
 #include <memory>
-#include "unicode.h"
-#include "endian.h"
-#include "binary_file.h"
+#include <arch/utility.h>
+#include <arch/string.h>
+#include "binary.h"
 
 namespace arch
 {
 
+namespace text
+{
+
 ///	<summary>
-///	ƒeƒLƒXƒgƒtƒ@ƒCƒ‹‚ð“Ç‚ÝŽæ‚è‚Ü‚·B
+///	ãƒ†ã‚­ã‚¹ãƒˆãƒ•ã‚¡ã‚¤ãƒ«ã‚’èª­ã¿å–ã‚Šã¾ã™ã€‚
 ///	</summary>
-class text_reader
+class reader
 {
 public:
 	///	<summary>
-	///	ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	///	ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	///	</summary>
-	text_reader();
+	reader();
 
 	///	<summary>
-	///	ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	///	ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	///	</summary>
-	text_reader(const text_reader& _reader);
+	reader(const reader& _reader);
 
 	///	<summary>
-	///	ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	///	ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	///	</summary>
-	text_reader(text_reader&& _reader);
+	reader(reader&& _reader);
 
 	///	<summary>
-	///	ƒtƒ@ƒCƒ‹‚ðŠJ‚«‚Ü‚·B
+	///	ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ãã¾ã™ã€‚
 	///	</summary>
-	text_reader(const std::string& _path, text_encoding _encode = text_encoding::unspecified, endian::endian_type _endian = endian::little_endian);
+	reader(const std::string& _path, text_encoding _encode = text_encoding::unspecified, endian_type _endian = endian_type::little_endian);
 
 	///	<summary>
-	///	ƒfƒXƒgƒ‰ƒNƒ^
+	///	ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	///	</summary>
-	~text_reader();
+	~reader();
 
 	///	<summary>
-	///	ƒtƒ@ƒCƒ‹‚ð•Â‚¶‚Ü‚·B
+	///	ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‰ã˜ã¾ã™ã€‚
 	///	</summary>
 	void close();
 	 
 	bool read_char(std::string& _str, text_encoding _encode = text_encoding::unspecified) const;
-	bool read_char(std::u16string& _str, endian::endian_type _endian = endian::little_endian) const;
+	bool read_char(std::u16string& _str, endian_type _endian = endian_type::little_endian) const;
 	//bool read_char(std::u32string& _str, endian::endian_type _endian = endian::little_endian) const;
 
-	bool read_string(std::string& _str, uint _count, text_encoding _encode = text_encoding::unspecified) const;
-	bool read_string(std::u16string& _str, uint _count, endian::endian_type _endian = endian::little_endian) const;
+	bool read_string(std::string& _str, size_t _count, text_encoding _encode = text_encoding::unspecified) const;
+	bool read_string(std::u16string& _str, size_t _count, endian_type _endian = endian_type::little_endian) const;
 	//bool read_string(std::u32string& _str, uint _count, endian::endian_type _endian = endian::little_endian) const;
 
 	bool read_line(std::string& _str, text_encoding _encode = text_encoding::unspecified) const;
-	bool read_line(std::u16string& _str, endian::endian_type _endian = endian::little_endian) const;
+	bool read_line(std::u16string& _str, endian_type _endian = endian_type::little_endian) const;
 	//bool read_line(std::u32string& _str, endian::endian_type _endian = endian::little_endian) const;
 
 	bool read_contents(std::string& _str, text_encoding _encode = text_encoding::unspecified) const;
-	bool read_contents(std::u16string& _str, endian::endian_type _endian = endian::little_endian) const;
+	bool read_contents(std::u16string& _str, endian_type _endian = endian_type::little_endian) const;
 	//bool read_contents(std::u32string& _str, endian::endian_type _endian = endian::little_endian) const;
 	
 	bool is_opened() const;
@@ -77,8 +80,8 @@ public:
 
 	bool operator!() const;
 
-	text_reader& operator=(const text_reader& _reader);
-	text_reader& operator=(text_reader&& _reader);
+	reader& operator=(const reader& _reader);
+	reader& operator=(reader&& _reader);
 
 private:
 	class impl;
@@ -87,38 +90,38 @@ private:
 
 
 ///	<summary>
-///	ƒeƒLƒXƒgƒtƒ@ƒCƒ‹‚ð“Ç‚ÝŽæ‚è‚Ü‚·B
+///	ãƒ†ã‚­ã‚¹ãƒˆãƒ•ã‚¡ã‚¤ãƒ«ã‚’èª­ã¿å–ã‚Šã¾ã™ã€‚
 ///	</summary>
-class text_writer
+class writer
 {
 public:
 	///	<summary>
-	///	ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	///	ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	///	</summary>
-	text_writer();
+	writer();
 
 	///	<summary>
-	///	ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	///	ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	///	</summary>
-	text_writer(const text_writer& writer);
+	writer(const writer& writer);
 
 	///	<summary>
-	///	ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	///	ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	///	</summary>
-	text_writer(text_writer&& writer);
+	writer(writer&& writer);
 
 	///	<summary>
-	///	ƒtƒ@ƒCƒ‹‚ðŠJ‚«‚Ü‚·B
+	///	ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ãã¾ã™ã€‚
 	///	</summary>
-	text_writer(const std::string& _path, open_mode _mode = open_mode::truncate, text_encoding encode = text_encoding::unspecified, endian::endian_type _endian = endian::little_endian);
+	writer(const std::string& _path, open_mode _mode = open_mode::truncate, text_encoding encode = text_encoding::unspecified, endian_type _endian = endian_type::little_endian);
 
 	///	<summary>
-	///	ƒfƒXƒgƒ‰ƒNƒ^
+	///	ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	///	</summary>
-	~text_writer();
+	~writer();
 
 	///	<summary>
-	///	ƒtƒ@ƒCƒ‹‚ð•Â‚¶‚Ü‚·B
+	///	ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‰ã˜ã¾ã™ã€‚
 	///	</summary>
 	void close();
 
@@ -126,23 +129,25 @@ public:
 
 	void write(char c) const;
 	void write(const std::string& string, text_encoding _encode = text_encoding::unspecified) const;
-	void write(const std::u16string& string, endian::endian_type _endian = endian::little_endian) const;
+	void write(const std::u16string& string, endian_type _endian = endian_type::little_endian) const;
 	//void write(const std::u32string& string, endian::endian_type _endian = endian::little_endian) const;
 
 	void write_line(const std::string& string, text_encoding _encode = text_encoding::unspecified) const;
-	void write_line(const std::u16string& string, endian::endian_type _endian = endian::little_endian) const;
+	void write_line(const std::u16string& string, endian_type _endian = endian_type::little_endian) const;
 	//void write_line(const std::u32string& string, endian::endian_type _endian = endian::little_endian) const;
 
 	bool is_opened() const;
 
 	bool	operator!() const;
 
-	text_writer& operator=(const text_writer& writer);
-	text_writer& operator=(text_writer&& writer);
+	writer& operator=(const writer& writer);
+	writer& operator=(writer&& writer);
 
 private:
 	class impl;
 	std::shared_ptr<impl> pimpl;
 };
+
+}
 
 }

@@ -70,7 +70,7 @@ template<class type, class... args> inline constexpr bool any(type _first, args.
 }
 
 /*!
-*	@brief 0‚æ‚è¬‚³‚¢ê‡‚Í-1A1‚æ‚è‘å‚«‚¢ê‡‚Í1A0‚Ìê‡‚Í0‚ğ•Ô‚µ‚Ü‚·B
+*	@brief 0ã‚ˆã‚Šå°ã•ã„å ´åˆã¯-1ã€1ã‚ˆã‚Šå¤§ãã„å ´åˆã¯1ã€0ã®å ´åˆã¯0ã‚’è¿”ã—ã¾ã™ã€‚
 */
 template<class type> inline constexpr type sign(type _value)
 {
@@ -79,9 +79,9 @@ template<class type> inline constexpr type sign(type _value)
 
 
 /*!
-*	@brief ŒÊ“x‚ğ“x”‚É•ÏŠ·‚µ‚Ü‚·B
-*	@param [in]	Radians	ŒÊ“x
-*	@return “x”
+*	@brief å¼§åº¦ã‚’åº¦æ•°ã«å¤‰æ›ã—ã¾ã™ã€‚
+*	@param [in]	Radians	å¼§åº¦
+*	@return åº¦æ•°
 */
 template<class type> inline constexpr type degrees(type radians)
 {
@@ -89,9 +89,9 @@ template<class type> inline constexpr type degrees(type radians)
 }
 
 /*!
-*	@brief “x”‚ğŒÊ“x‚É•ÏŠ·‚µ‚Ü‚·B
-*	@param [in]	Degrees	“x”
-*	@return ŒÊ“x
+*	@brief åº¦æ•°ã‚’å¼§åº¦ã«å¤‰æ›ã—ã¾ã™ã€‚
+*	@param [in]	Degrees	åº¦æ•°
+*	@return å¼§åº¦
 */
 template<class type> inline constexpr type radians(type degrees)
 {
@@ -99,7 +99,7 @@ template<class type> inline constexpr type radians(type degrees)
 }
 
 /*!
-*	@brief Å‘åŒö–ñ”
+*	@brief æœ€å¤§å…¬ç´„æ•°
 */
 template<class type> inline constexpr type greatest_common_divisor(type a, type b)
 {
@@ -116,7 +116,7 @@ template<class type> inline constexpr type greatest_common_divisor(type a, type 
 }
 
 /*!
-*	@brief Å¬Œö”{”
+*	@brief æœ€å°å…¬å€æ•°
 */
 template<class type> inline constexpr type least_common_multiple(type a, type b)
 {

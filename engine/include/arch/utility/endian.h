@@ -17,16 +17,13 @@
 namespace arch
 {
 
-namespace endian
-{
-
 enum class endian_type
 {
 	little_endian,
 	big_endian,
 };
 
-template<typename value_type> value_type swap(value_type value)
+template<typename value_type> value_type endian_swap(value_type value)
 {
 	uint8_t* p = reinterpret_cast<uint8_t*>(&value);
 	value_type swapped_value = 0;
@@ -35,8 +32,6 @@ template<typename value_type> value_type swap(value_type value)
 		swapped_value |= p[i] << (8 * (sizeof(value_type) - i - 1));
 	}
 	return swapped_value;
-}
-
 }
 
 }

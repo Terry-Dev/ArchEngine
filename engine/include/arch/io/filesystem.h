@@ -13,7 +13,7 @@
 #pragma once
 
 #include <vector>
-#include "types.h"
+#include <arch/utility.h>
 
 namespace arch
 {
