@@ -1,4 +1,4 @@
-//=================================================================================//
+ï»¿//=================================================================================//
 //                                                                                 //
 //  ArchEngine                                                                     //
 //                                                                                 //
@@ -24,7 +24,7 @@ template<typename type> inline constexpr type e()
 	return static_cast<type>(2.71828182845904523536);
 }
 
-///< ƒÎ
+///< Ï€
 template<typename type> inline constexpr type pi()
 {
 	return static_cast<type>(3.14159265358979323846);

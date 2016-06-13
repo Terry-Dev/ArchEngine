@@ -1,4 +1,4 @@
-#include <cassert>
+﻿#include <cassert>
 #include "kernel/convert.h"
 #include "kernel/string_format.h"
 #include "win32/input_manager.h"

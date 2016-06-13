@@ -1,4 +1,4 @@
-#include "rawinput/rawinput_device.h"
+﻿#include "rawinput/rawinput_device.h"
 #include <hidsdi.h>
 
 #pragma comment(lib, "Hid.lib")

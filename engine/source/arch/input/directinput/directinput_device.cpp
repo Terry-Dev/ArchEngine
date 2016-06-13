@@ -1,4 +1,4 @@
-#include "directinput/directinput_device.h"
+﻿#include "directinput/directinput_device.h"
 
 #pragma comment(lib, "dxguid.lib")
 #pragma comment(lib, "dinput8.lib")

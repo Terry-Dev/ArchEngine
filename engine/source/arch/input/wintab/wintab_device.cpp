@@ -1,4 +1,4 @@
-#include "wintab/wintab_device.h"
+﻿#include "wintab/wintab_device.h"
 
 using namespace arch;
 using namespace arch::wintab;

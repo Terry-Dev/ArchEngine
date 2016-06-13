@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #define NOMINMAX
 #define PACKETDATA (PK_X | PK_Y | PK_BUTTONS | PK_CURSOR | PK_STATUS | PK_NORMAL_PRESSURE | PK_ORIENTATION)
