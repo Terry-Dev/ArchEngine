@@ -127,8 +127,8 @@ public:
 
 	hsv_color& operator=(const vector4<type>& c)
 	{
-		type max = arch::max(arch::max(color.r, color.g), color.b);
-		type min = arch::min(arch::min(color.r, color.g), color.b);
+		type max = arch::max(arch::max(c.r, c.g), c.b);
+		type min = arch::min(arch::min(c.r, c.g), c.b);
 		type m = max - min;
 
 		v = max;
@@ -145,15 +145,15 @@ public:
 
 		if (max == color.r)
 		{
-			h = static_cast<type>(60.0) * (color.g - color.b) / m;
+			h = static_cast<type>(60.0) * (c.g - c.b) / m;
 		}
 		else if (max == color.b)
 		{
-			h = static_cast<type>(60.0) * (static_cast<type>(2.0) + (color.b - color.r) / m);
+			h = static_cast<type>(60.0) * (static_cast<type>(2.0) + (c.b - c.r) / m);
 		}
 		else
 		{
-			h = static_cast<type>(60.0) * (static_cast<type>(4.0) + (color.r - color.g) / m);
+			h = static_cast<type>(60.0) * (static_cast<type>(4.0) + (c.r - c.g) / m);
 		}
 
 		if (h < static_cast<type>(0.0))

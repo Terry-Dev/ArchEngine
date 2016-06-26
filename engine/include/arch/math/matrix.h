@@ -35,7 +35,7 @@ public:
 
 public:
 	matrix() = default;
-	
+
 	constexpr matrix(const std::initializer_list<value_type>& list)
 	: m_elements()
 	{
@@ -93,7 +93,7 @@ public:
 	{
 		return row_size;
 	}
-	
+
 	///	<summary>列数を取得します。</summary>
 	constexpr size_type columns() const
 	{
@@ -165,9 +165,9 @@ public:
 				mat[y][x] = static_cast<value_type>(y == x ? 1.0 : 0.0);
 			}
 		}
-		return std::move(m);
+		return std::move(mat);
 	}
-	
+
 private:
 	std::array<value_type, row_size * column_size> m_elements;
 };

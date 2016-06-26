@@ -16,7 +16,7 @@
 
 namespace arch
 {
-	
+
 template <typename type> class matrix4x4;
 
 typedef matrix4x4<char>		char4x4;
@@ -29,7 +29,7 @@ typedef matrix4x4<long>		long4x4;
 typedef matrix4x4<ulong>	ulong4x4;
 typedef matrix4x4<float>	float4x4;
 typedef matrix4x4<double>	double4x4;
-	
+
 template <typename type>
 class matrix4x4
 {
@@ -159,7 +159,7 @@ public:
 
 	constexpr matrix4x4 rotated(value_type roll, value_type pitch, value_type yaw) const
 	{
-		return *this * rotation(roll, picth, yaw);
+		return *this * rotation(roll, pitch, yaw);
 	}
 
 	constexpr matrix4x4 translated(value_type _x, value_type _y, value_type _z) const

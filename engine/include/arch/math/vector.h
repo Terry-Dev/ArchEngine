@@ -19,7 +19,7 @@
 
 namespace arch
 {
-	
+
 template <typename type> class vector2;
 template <typename type> class vector3;
 template <typename type> class vector4;
@@ -243,7 +243,7 @@ public:
 
 	vector2 operator/(const vector2& _vector) const
 	{
-		return vector2<value_type>(x / vector.x, y / vector.y);
+		return vector2<value_type>(x / _vector.x, y / _vector.y);
 	}
 
 	vector2 operator/(value_type value) const
@@ -253,8 +253,8 @@ public:
 
 	vector2& operator/=(const vector2& _vector)
 	{
-		x /= vector.x;
-		y /= vector.y;
+		x /= _vector.x;
+		y /= _vector.y;
 		return *this;
 	}
 
@@ -264,7 +264,7 @@ public:
 		y /= _value;
 		return *this;
 	}
-	
+
 	bool operator==(const vector2& _vector) const
 	{
 		return (x == _vector.x && y == _vector.y);
@@ -364,7 +364,7 @@ public:
 	{
 		return double2(static_cast<double>(x), static_cast<double>(y));
 	}
-	
+
 public:
 	static constexpr vector2 zero()
 	{
@@ -388,12 +388,12 @@ public:
 
 	static vector2 random()
 	{
-		return vector2<value_type>(random<value_type>(), random<value_type>());
+		return vector2<value_type>(arch::random<value_type>(), arch::random<value_type>());
 	}
 
 	static vector2 random(value_type _minimum, value_type _maximum)
 	{
-		return vector2<value_type>(random(_minimum, _maximum), random(_minimum, _maximum));
+		return vector2<value_type>(arch::random<value_type>(_minimum, _maximum), arch::random<value_type>(_minimum, _maximum));
 	}
 
 	union
@@ -757,12 +757,12 @@ public:
 
 	static vector3 random()
 	{
-		return vector3<value_type>(random<value_type>(), random<value_type>(), random<value_type>());
+		return vector3<value_type>(arch::random<value_type>(), arch::random<value_type>(), arch::random<value_type>());
 	}
 
 	static vector3 random(value_type _minimum, value_type _maximum)
 	{
-		return vector3<value_type>(random(_minimum, _maximum), random(_minimum, _maximum), random(_minimum, _maximum));
+		return vector3<value_type>(arch::random<value_type>(_minimum, _maximum), arch::random<value_type>(_minimum, _maximum), arch::random<value_type>(_minimum, _maximum));
 	}
 
 public:
@@ -1159,12 +1159,12 @@ public:
 
 	static vector4 random()
 	{
-		return vector4<value_type>(random<value_type>(), random<value_type>(), random<value_type>(), random<value_type>());
+		return vector4<value_type>(arch::random<value_type>(), arch::random<value_type>(), arch::random<value_type>(), arch::random<value_type>());
 	}
 
 	static vector4 random(value_type _minimum, value_type _maximum)
 	{
-		return vector4<value_type>(random(_minimum, _maximum), random(_minimum, _maximum), random(_minimum, _maximum), random(_minimum, _maximum));
+		return vector4<value_type>(arch::random<value_type>(_minimum, _maximum), arch::random<value_type>(_minimum, _maximum), arch::random<value_type>(_minimum, _maximum), arch::random<value_type>(_minimum, _maximum));
 	}
 
 public:

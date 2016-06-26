@@ -29,7 +29,7 @@ typedef matrix3x3<long> long3x3;
 typedef matrix3x3<ulong> ulong3x3;
 typedef matrix3x3<float> float3x3;
 typedef matrix3x3<double> double3x3;
-	
+
 template <typename type>
 class matrix3x3
 {
@@ -296,7 +296,7 @@ public:
 		{
 			for (size_t x = 0; x < 3; x++)
 			{
-				if (data[y][x] != value)
+				if (data[y][x] != vector.data[y][x])
 				{
 					return false;
 				}
@@ -311,7 +311,7 @@ public:
 		{
 			for (size_t x = 0; x < 3; x++)
 			{
-				if (data[y][x] != value)
+				if (data[y][x] != vector.data[y][x])
 				{
 					return true;
 				}
