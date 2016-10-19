@@ -12,7 +12,4 @@
 
 #pragma once
 
-#include "network/basic_network.h"
-#include "network/socket.h"
-#include "network/tcp.h"
-#include "network/udp.h"
+#include "network/basic_socket.h"
