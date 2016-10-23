@@ -20,8 +20,6 @@
 
 namespace arch
 {
-namespace network
-{
 namespace html
 {
 class element
@@ -88,7 +86,7 @@ private:
         return result.substr(0, result.size() - 1);
     }
 public:
-	static element null() { return element(); };
+	static element null() { return element(""); };
     element(){}
     element(std::string tag)
     {
@@ -207,7 +205,6 @@ public:
         return result;
     }
 };
-    //constexpr element html(){ return element("html"); }
-}
+    //constexpr element html(){ return "html"; }
 }
 }
